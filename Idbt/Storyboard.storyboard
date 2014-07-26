@@ -26,11 +26,41 @@
                                     <segue destination="BZ1-aJ-TMi" kind="modal" id="3VM-V4-htx"/>
                                 </connections>
                             </button>
+                            <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dwd-SZ-dv8">
+                                <rect key="frame" x="123" y="518" width="75" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Hi, idobata">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi from idobata" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s6P-Fm-ow4">
+                                <rect key="frame" x="20" y="74" width="119" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView appearanceType="aqua" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Please click Hi, idobata." selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q19-xg-sCE">
+                                <rect key="frame" x="20" y="103" width="280" height="407"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="q19-xg-sCE" firstAttribute="top" secondItem="s6P-Fm-ow4" secondAttribute="bottom" constant="8" id="3id-eS-ReL"/>
                             <constraint firstAttribute="trailing" secondItem="r1i-E3-L5S" secondAttribute="trailing" constant="20" id="6nh-4M-Aj1"/>
+                            <constraint firstAttribute="trailing" secondItem="q19-xg-sCE" secondAttribute="trailing" constant="20" id="BAF-1q-vch"/>
+                            <constraint firstItem="s6P-Fm-ow4" firstAttribute="top" secondItem="sKH-0v-eEr" secondAttribute="bottom" constant="10" id="Tqq-9g-UZ5"/>
+                            <constraint firstAttribute="trailing" secondItem="Dwd-SZ-dv8" secondAttribute="trailing" constant="122" id="Wh1-uR-QAo"/>
+                            <constraint firstItem="Dwd-SZ-dv8" firstAttribute="leading" secondItem="AOH-cf-8Mz" secondAttribute="leading" constant="123" id="aki-i0-avT"/>
                             <constraint firstItem="4Q2-Gx-bcK" firstAttribute="top" secondItem="r1i-E3-L5S" secondAttribute="bottom" constant="20" id="gXF-Gu-YgJ"/>
+                            <constraint firstItem="q19-xg-sCE" firstAttribute="leading" secondItem="AOH-cf-8Mz" secondAttribute="leading" constant="20" id="hQv-aK-x5O"/>
+                            <constraint firstItem="s6P-Fm-ow4" firstAttribute="leading" secondItem="AOH-cf-8Mz" secondAttribute="leading" constant="20" id="n2j-HA-qKC"/>
+                            <constraint firstItem="4Q2-Gx-bcK" firstAttribute="top" secondItem="Dwd-SZ-dv8" secondAttribute="bottom" constant="20" id="pBz-5n-M7T"/>
+                            <constraint firstItem="Dwd-SZ-dv8" firstAttribute="top" secondItem="q19-xg-sCE" secondAttribute="bottom" constant="8" id="uQ7-Qd-vFc"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Kuc-dz-pJ4"/>
