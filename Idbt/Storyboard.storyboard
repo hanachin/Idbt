@@ -106,6 +106,7 @@
                     <connections>
                         <outlet property="email" destination="JwN-A7-fRg" id="zbn-Pz-vVw"/>
                         <outlet property="password" destination="vrR-eM-0nd" id="X7v-Y9-eGb"/>
+                        <segue destination="0SM-ob-hUw" kind="unwind" identifier="setting done" unwindAction="unwindToTop:" id="VFi-as-tBv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Zm-SP-MOE" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -49,6 +49,7 @@
 - (IBAction)done:(id)sender
 {
     NSLog(@"hola");
+    [self performSegueWithIdentifier:@"setting done" sender:self];
 }
 
 @end
