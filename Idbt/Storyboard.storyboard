@@ -50,7 +50,46 @@
                     <view key="view" contentMode="scaleToFill" id="xbm-fZ-fQx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s4x-zb-Qfr">
+                                <rect key="frame" x="20" y="75" width="41" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JwN-A7-fRg">
+                                <rect key="frame" x="20" y="104" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                            </textField>
+                            <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bH6-2e-wcn">
+                                <rect key="frame" x="20" y="142" width="75" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vrR-eM-0nd">
+                                <rect key="frame" x="20" y="171" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="alphabet" secureTextEntry="YES"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bH6-2e-wcn" firstAttribute="top" secondItem="JwN-A7-fRg" secondAttribute="bottom" constant="8" id="9JG-r4-5sJ"/>
+                            <constraint firstAttribute="trailing" secondItem="vrR-eM-0nd" secondAttribute="trailing" constant="20" id="BUj-xL-mbZ"/>
+                            <constraint firstItem="bH6-2e-wcn" firstAttribute="leading" secondItem="xbm-fZ-fQx" secondAttribute="leading" constant="20" id="DNl-V3-IEs"/>
+                            <constraint firstItem="vrR-eM-0nd" firstAttribute="leading" secondItem="xbm-fZ-fQx" secondAttribute="leading" constant="20" id="OnE-hM-f6I"/>
+                            <constraint firstItem="JwN-A7-fRg" firstAttribute="leading" secondItem="xbm-fZ-fQx" secondAttribute="leading" constant="20" id="Oqe-PB-L6R"/>
+                            <constraint firstItem="JwN-A7-fRg" firstAttribute="top" secondItem="s4x-zb-Qfr" secondAttribute="bottom" constant="8" id="TWo-qH-mpe"/>
+                            <constraint firstAttribute="trailing" secondItem="JwN-A7-fRg" secondAttribute="trailing" constant="20" id="Wdg-dQ-vBO"/>
+                            <constraint firstItem="s4x-zb-Qfr" firstAttribute="top" secondItem="iAG-L7-KHS" secondAttribute="bottom" constant="10" id="XA2-7S-Bk2"/>
+                            <constraint firstItem="s4x-zb-Qfr" firstAttribute="leading" secondItem="xbm-fZ-fQx" secondAttribute="leading" constant="20" id="fLW-vv-j2p"/>
+                            <constraint firstItem="vrR-eM-0nd" firstAttribute="top" secondItem="bH6-2e-wcn" secondAttribute="bottom" constant="8" id="gdb-fu-VTt"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="4Vk-b9-MLG">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="CX5-Bl-LjM">
