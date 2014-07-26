@@ -10,4 +10,6 @@
 
 @interface HNCTopViewController : UIViewController
 
+- (IBAction)unwindToTop:(UIStoryboardSegue *)segue;
+
 @end

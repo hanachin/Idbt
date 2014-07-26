@@ -53,11 +53,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="4Vk-b9-MLG">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="CX5-Bl-LjM"/>
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="CX5-Bl-LjM">
+                            <connections>
+                                <segue destination="0SM-ob-hUw" kind="unwind" unwindAction="unwindToTop:" id="50s-7K-zYR"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Done" id="1tz-On-p4i"/>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Zm-SP-MOE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="0SM-ob-hUw" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1515" y="73"/>
         </scene>
