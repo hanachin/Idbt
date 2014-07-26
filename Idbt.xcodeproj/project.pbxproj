@@ -22,6 +22,7 @@
 		B2CDCFA31983D7B00087F0AF /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2CDCFA21983D7B00087F0AF /* Storyboard.storyboard */; };
 		B2CDCFA71983D85C0087F0AF /* HNCTopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2CDCFA51983D85C0087F0AF /* HNCTopViewController.m */; };
 		B2CDCFA81983D85C0087F0AF /* HNCTopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2CDCFA61983D85C0087F0AF /* HNCTopViewController.xib */; };
+		B2CDCFAB1983DEBB0087F0AF /* HNCSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2CDCFAA1983DEBB0087F0AF /* HNCSettingsViewController.m */; };
 		F6018AF1175B4999ABE8143C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D9D148599FB435988029055 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +59,8 @@
 		B2CDCFA41983D85C0087F0AF /* HNCTopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNCTopViewController.h; sourceTree = "<group>"; };
 		B2CDCFA51983D85C0087F0AF /* HNCTopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNCTopViewController.m; sourceTree = "<group>"; };
 		B2CDCFA61983D85C0087F0AF /* HNCTopViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HNCTopViewController.xib; sourceTree = "<group>"; };
+		B2CDCFA91983DEBB0087F0AF /* HNCSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNCSettingsViewController.h; sourceTree = "<group>"; };
+		B2CDCFAA1983DEBB0087F0AF /* HNCSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNCSettingsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +91,8 @@
 		B2CDCF671983D66A0087F0AF = {
 			isa = PBXGroup;
 			children = (
+				B2CDCFA91983DEBB0087F0AF /* HNCSettingsViewController.h */,
+				B2CDCFAA1983DEBB0087F0AF /* HNCSettingsViewController.m */,
 				B2CDCFA41983D85C0087F0AF /* HNCTopViewController.h */,
 				B2CDCFA51983D85C0087F0AF /* HNCTopViewController.m */,
 				B2CDCFA61983D85C0087F0AF /* HNCTopViewController.xib */,
@@ -297,6 +302,7 @@
 				B2CDCF841983D66A0087F0AF /* HNCAppDelegate.m in Sources */,
 				B2CDCFA71983D85C0087F0AF /* HNCTopViewController.m in Sources */,
 				B2CDCF801983D66A0087F0AF /* main.m in Sources */,
+				B2CDCFAB1983DEBB0087F0AF /* HNCSettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
