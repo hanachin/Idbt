@@ -32,6 +32,9 @@
                                 <state key="normal" title="Hi, idobata">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="hi:" destination="nzp-lo-Nh7" eventType="touchUpInside" id="bQa-OW-EVy"/>
+                                </connections>
                             </button>
                             <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi from idobata" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s6P-Fm-ow4">
                                 <rect key="frame" x="20" y="74" width="119" height="21"/>
@@ -64,6 +67,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Kuc-dz-pJ4"/>
+                    <connections>
+                        <outlet property="textView" destination="q19-xg-sCE" id="0bV-1I-nwh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b9b-3W-4zT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

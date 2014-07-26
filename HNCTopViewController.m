@@ -44,4 +44,9 @@
     // do nothing
 }
 
+- (IBAction)hi:(id)sender
+{
+    self.textView.text = @"hi";
+}
+
 @end
