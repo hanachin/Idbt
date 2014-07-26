@@ -20,6 +20,8 @@
 		B2CDCF971983D66B0087F0AF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B2CDCF951983D66B0087F0AF /* InfoPlist.strings */; };
 		B2CDCF991983D66B0087F0AF /* IdbtTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B2CDCF981983D66B0087F0AF /* IdbtTests.m */; };
 		B2CDCFA31983D7B00087F0AF /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2CDCFA21983D7B00087F0AF /* Storyboard.storyboard */; };
+		B2CDCFA71983D85C0087F0AF /* HNCTopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2CDCFA51983D85C0087F0AF /* HNCTopViewController.m */; };
+		B2CDCFA81983D85C0087F0AF /* HNCTopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2CDCFA61983D85C0087F0AF /* HNCTopViewController.xib */; };
 		F6018AF1175B4999ABE8143C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D9D148599FB435988029055 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +55,9 @@
 		B2CDCF961983D66B0087F0AF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B2CDCF981983D66B0087F0AF /* IdbtTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IdbtTests.m; sourceTree = "<group>"; };
 		B2CDCFA21983D7B00087F0AF /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		B2CDCFA41983D85C0087F0AF /* HNCTopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNCTopViewController.h; sourceTree = "<group>"; };
+		B2CDCFA51983D85C0087F0AF /* HNCTopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNCTopViewController.m; sourceTree = "<group>"; };
+		B2CDCFA61983D85C0087F0AF /* HNCTopViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HNCTopViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +88,9 @@
 		B2CDCF671983D66A0087F0AF = {
 			isa = PBXGroup;
 			children = (
+				B2CDCFA41983D85C0087F0AF /* HNCTopViewController.h */,
+				B2CDCFA51983D85C0087F0AF /* HNCTopViewController.m */,
+				B2CDCFA61983D85C0087F0AF /* HNCTopViewController.xib */,
 				B2CDCF791983D66A0087F0AF /* Idbt */,
 				B2CDCF921983D66A0087F0AF /* IdbtTests */,
 				B2CDCF721983D66A0087F0AF /* Frameworks */,
@@ -231,6 +239,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2CDCFA81983D85C0087F0AF /* HNCTopViewController.xib in Resources */,
 				B2CDCF7E1983D66A0087F0AF /* InfoPlist.strings in Resources */,
 				B2CDCF861983D66A0087F0AF /* Images.xcassets in Resources */,
 				B2CDCFA31983D7B00087F0AF /* Storyboard.storyboard in Resources */,
@@ -286,6 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2CDCF841983D66A0087F0AF /* HNCAppDelegate.m in Sources */,
+				B2CDCFA71983D85C0087F0AF /* HNCTopViewController.m in Sources */,
 				B2CDCF801983D66A0087F0AF /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
