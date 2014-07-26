@@ -97,7 +97,11 @@
                                 <segue destination="0SM-ob-hUw" kind="unwind" unwindAction="unwindToTop:" id="50s-7K-zYR"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="1tz-On-p4i"/>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="1tz-On-p4i">
+                            <connections>
+                                <action selector="done:" destination="z2U-oR-dcF" id="rZ7-uQ-jF5"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="email" destination="JwN-A7-fRg" id="zbn-Pz-vVw"/>
