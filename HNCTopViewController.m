@@ -7,7 +7,7 @@
 //
 
 #import "HNCTopViewController.h"
-#import "Pods/UICKeyChainStore/Lib/UICKeyChainStore.h"
+#import "HNCIdobataClient.h"
 
 @interface HNCTopViewController ()
 
@@ -27,10 +27,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    NSLog(@"greeting: %@", [UICKeyChainStore stringForKey:@"greeting"]);
-    [UICKeyChainStore setString:@"hi" forKey:@"greeting"];
-    NSLog(@"greeting: %@", [UICKeyChainStore stringForKey:@"greeting"]);
 }
 
 - (void)didReceiveMemoryWarning
@@ -46,6 +42,12 @@
 
 - (IBAction)hi:(id)sender
 {
+    [[HNCIdobataClient defaultClient] seed: ^(NSData *data, NSURLResponse *response, NSError *error) {
+        NSLog(@"Got response %@ with error %@.\n", response, error);
+        NSString *json = [[NSString alloc] initWithData: data encoding: NSUTF8StringEncoding];
+        NSLog(@"DATA:\n%@\nEND DATA\n", json);
+        self.textView.text = json;
+    }];
     self.textView.text = @"hi";
 }
 
