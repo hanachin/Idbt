@@ -7,6 +7,7 @@
 //
 
 #import "HNCTopViewController.h"
+#import "Pods/UICKeyChainStore/Lib/UICKeyChainStore.h"
 
 @interface HNCTopViewController ()
 
@@ -27,7 +28,9 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    NSLog(@"Hi");
+    NSLog(@"greeting: %@", [UICKeyChainStore stringForKey:@"greeting"]);
+    [UICKeyChainStore setString:@"hi" forKey:@"greeting"];
+    NSLog(@"greeting: %@", [UICKeyChainStore stringForKey:@"greeting"]);
 }
 
 - (void)didReceiveMemoryWarning
