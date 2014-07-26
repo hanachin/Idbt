@@ -10,4 +10,8 @@
 
 @interface HNCIdobataClient : NSObject
 
++ (HNCIdobataClient *)defaultClient;
+- (HNCIdobataClient *)initWithEmail:(NSString *)email password:(NSString *)password;
+- (void)seed:(void (^)(NSData *data, NSURLResponse *response, NSError *error))completionHandler;
+
 @end
