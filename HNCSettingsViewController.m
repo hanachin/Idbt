@@ -7,6 +7,7 @@
 //
 
 #import "HNCSettingsViewController.h"
+#import "Pods/UICKeyChainStore/Lib/UICKeyChainStore.h"
 
 @interface HNCSettingsViewController ()
 
@@ -26,7 +27,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.email.text = [UICKeyChainStore stringForKey:@"email"];
+    self.password.text = [UICKeyChainStore stringForKey:@"password"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -48,7 +50,8 @@
 
 - (IBAction)done:(id)sender
 {
-    NSLog(@"hola");
+    [UICKeyChainStore setString:self.email.text forKey:@"email"];
+    [UICKeyChainStore setString:self.password.text forKey:@"password"];
     [self performSegueWithIdentifier:@"setting done" sender:self];
 }
 
