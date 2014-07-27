@@ -35,7 +35,11 @@
 - (void)seed:(void (^)(NSData *data, NSURLResponse *response, NSError *error))completionHandler;
 {
     NSURL *url = [NSURL URLWithString: @"https://idobata.io/api/seed"];
-    [[[self defaultSession] dataTaskWithURL: url completionHandler: completionHandler] resume];
+    [[[self defaultSession] dataTaskWithURL: url completionHandler: ^(NSData *data, NSURLResponse *response, NSError *error) {
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^(void) {
+            completionHandler(data, response, error);
+        }];
+    }] resume];
 }
 
 - (NSString *)basicAuthCredential
@@ -60,7 +64,7 @@
 
 - (NSURLSession *)defaultSession
 {
-    return [NSURLSession sessionWithConfiguration: [self defaultConfiguration] delegate: nil delegateQueue: [NSOperationQueue mainQueue]];
+    return [NSURLSession sessionWithConfiguration: [self defaultConfiguration]];
 }
 
 /*
