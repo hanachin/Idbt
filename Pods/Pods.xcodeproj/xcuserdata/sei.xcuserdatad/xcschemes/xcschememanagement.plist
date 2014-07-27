@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-Underscore.m.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>4F559EDD7910422E92FBDD73</key>
+		<key>85980362576C48EEA262A3D8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EC541A63E5CE45EA8FAB1801</key>
+		<key>E01FFE31DF9A464A966FE7A3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F285F1B9010D4DC190A573FC</key>
 		<dict>
 			<key>primary</key>
 			<true/>

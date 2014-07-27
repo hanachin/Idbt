@@ -12,3 +12,9 @@
 #define COCOAPODS_VERSION_MINOR_UICKeyChainStore 0
 #define COCOAPODS_VERSION_PATCH_UICKeyChainStore 5
 
+// Underscore.m
+#define COCOAPODS_POD_AVAILABLE_Underscore_m
+#define COCOAPODS_VERSION_MAJOR_Underscore_m 0
+#define COCOAPODS_VERSION_MINOR_Underscore_m 2
+#define COCOAPODS_VERSION_PATCH_Underscore_m 1
+

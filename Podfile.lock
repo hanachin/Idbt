@@ -1,10 +1,13 @@
 PODS:
   - UICKeyChainStore (1.0.5)
+  - Underscore.m (0.2.1)
 
 DEPENDENCIES:
   - UICKeyChainStore
+  - Underscore.m
 
 SPEC CHECKSUMS:
   UICKeyChainStore: 4f9719600cc70025064e26f28f1210bcfc3b0c35
+  Underscore.m: f99c166a9fdccfb5069085b6b4263c04b817fc9f
 
 COCOAPODS: 0.33.1
