@@ -8,6 +8,7 @@
 
 #import "HNCTopViewController.h"
 #import "HNCIdobataClient.h"
+#import "HNCMessagesTableViewController.h"
 #import "../Pods/Underscore.m/Underscore/Underscore+Functional.h"
 
 @interface HNCTopViewController ()
@@ -45,20 +46,15 @@
 {
     [[HNCIdobataClient defaultClient] messages:^(NSArray *messages, NSURLResponse *response, NSError *error) {
         if (messages) {
-            NSArray *bodies = Underscore.array(messages).map(^NSString *(HNCIdobataMessage *message) { return message.body; }).unwrap;
-            NSString *htmlString = [bodies componentsJoinedByString:@"\n"];
-            NSAttributedString *attributedString = [[NSAttributedString alloc] initWithData:[htmlString dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes:nil error:nil];
-            self.textView.attributedText = attributedString;
+            for (id c in self.childViewControllers) {
+                if ([c isKindOfClass:[HNCMessagesTableViewController class]]) {
+                    HNCMessagesTableViewController *controller = (HNCMessagesTableViewController *)c;
+                    [controller.messages addObjectsFromArray: messages];
+                    [controller.tableView reloadData];
+                }
+            }
         }
     }];
-    /*
-    [[HNCIdobataClient defaultClient] seed: ^(HNCIdobataSeed *seed, NSURLResponse *response, NSError *error) {
-        NSLog(@"Got response %@ with error %@.\n", response, error);
-        NSLog(@"DATA:\n%@\nEND DATA\n", seed.json);
-        self.textView.text = seed.json;
-    }];
-     */
-    self.textView.text = @"hi";
 }
 
 @end

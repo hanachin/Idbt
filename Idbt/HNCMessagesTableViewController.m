@@ -7,12 +7,16 @@
 //
 
 #import "HNCMessagesTableViewController.h"
+#import "HNCMessagesTableViewConstant.h"
+#import "HNCMessagesTableViewCell.h"
+#import "HNCIdobataMessage.h"
 
 @interface HNCMessagesTableViewController ()
 
 @end
 
 @implementation HNCMessagesTableViewController
+
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -32,6 +36,9 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    UINib *messagesTableCellNib = [UINib nibWithNibName:HNCMessagesTableViewCellIdentifier bundle:nil];
+    [self.tableView registerNib:messagesTableCellNib forCellReuseIdentifier:HNCMessagesTableViewCellIdentifier];
+    self.messages =[NSMutableArray array];
 }
 
 - (void)didReceiveMemoryWarning
@@ -49,30 +56,21 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    return self.messages.count;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
+    HNCMessagesTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:HNCMessagesTableViewCellIdentifier forIndexPath:indexPath];
+    HNCIdobataMessage *message = [self.messages objectAtIndex:indexPath.row];
+    [cell setupWithMessage:message];
     return cell;
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+    return NO;
 }
-*/
 
 /*
 // Override to support editing the table view.

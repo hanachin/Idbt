@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="U1W-zn-3gi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="3hW-1s-gc3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -42,34 +42,31 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView appearanceType="aqua" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Please click Hi, idobata." selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q19-xg-sCE">
-                                <rect key="frame" x="20" y="103" width="280" height="407"/>
+                            <containerView appearanceType="aqua" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fx7-Vc-9as">
+                                <rect key="frame" x="0.0" y="103" width="320" height="407"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
-                            </textView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="U1W-zn-3gi" kind="embed" id="B4F-dX-eCE"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="q19-xg-sCE" firstAttribute="top" secondItem="s6P-Fm-ow4" secondAttribute="bottom" constant="8" id="3id-eS-ReL"/>
+                            <constraint firstAttribute="trailing" secondItem="fx7-Vc-9as" secondAttribute="trailing" id="5mO-7i-CLg"/>
                             <constraint firstAttribute="trailing" secondItem="r1i-E3-L5S" secondAttribute="trailing" constant="20" id="6nh-4M-Aj1"/>
-                            <constraint firstAttribute="trailing" secondItem="q19-xg-sCE" secondAttribute="trailing" constant="20" id="BAF-1q-vch"/>
+                            <constraint firstItem="fx7-Vc-9as" firstAttribute="leading" secondItem="AOH-cf-8Mz" secondAttribute="leading" id="9Wg-Ny-lbg"/>
+                            <constraint firstItem="Dwd-SZ-dv8" firstAttribute="top" secondItem="fx7-Vc-9as" secondAttribute="bottom" constant="8" id="RSy-fE-gty"/>
                             <constraint firstItem="s6P-Fm-ow4" firstAttribute="top" secondItem="sKH-0v-eEr" secondAttribute="bottom" constant="10" id="Tqq-9g-UZ5"/>
                             <constraint firstAttribute="trailing" secondItem="Dwd-SZ-dv8" secondAttribute="trailing" constant="122" id="Wh1-uR-QAo"/>
                             <constraint firstItem="Dwd-SZ-dv8" firstAttribute="leading" secondItem="AOH-cf-8Mz" secondAttribute="leading" constant="123" id="aki-i0-avT"/>
                             <constraint firstItem="4Q2-Gx-bcK" firstAttribute="top" secondItem="r1i-E3-L5S" secondAttribute="bottom" constant="20" id="gXF-Gu-YgJ"/>
-                            <constraint firstItem="q19-xg-sCE" firstAttribute="leading" secondItem="AOH-cf-8Mz" secondAttribute="leading" constant="20" id="hQv-aK-x5O"/>
                             <constraint firstItem="s6P-Fm-ow4" firstAttribute="leading" secondItem="AOH-cf-8Mz" secondAttribute="leading" constant="20" id="n2j-HA-qKC"/>
                             <constraint firstItem="4Q2-Gx-bcK" firstAttribute="top" secondItem="Dwd-SZ-dv8" secondAttribute="bottom" constant="20" id="pBz-5n-M7T"/>
-                            <constraint firstItem="Dwd-SZ-dv8" firstAttribute="top" secondItem="q19-xg-sCE" secondAttribute="bottom" constant="8" id="uQ7-Qd-vFc"/>
+                            <constraint firstItem="fx7-Vc-9as" firstAttribute="top" secondItem="s6P-Fm-ow4" secondAttribute="bottom" constant="8" id="wjy-Jh-Ooz"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Kuc-dz-pJ4"/>
-                    <connections>
-                        <outlet property="textView" destination="q19-xg-sCE" id="0bV-1I-nwh"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b9b-3W-4zT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -78,19 +75,21 @@
         <!--Messages Table View Controller-->
         <scene sceneID="B2m-MI-Qh8">
             <objects>
-                <tableViewController id="U1W-zn-3gi" customClass="HNCMessagesTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="MessagesTableView" id="U1W-zn-3gi" customClass="HNCMessagesTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="zLK-Ox-tS5">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="407"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="sU0-9D-bCg">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="MessagesTableViewCell" id="sU0-9D-bCg" customClass="HNCMessagesTableViewCell">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sU0-9D-bCg" id="Vw7-eZ-uiX">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -101,7 +100,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BFt-nr-hdg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="617" y="736"/>
+            <point key="canvasLocation" x="1011" y="739"/>
         </scene>
         <!--Settings View Controller - Settings-->
         <scene sceneID="MId-3F-y2J">
@@ -212,7 +211,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UjB-Pf-DbJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="989" y="73"/>
+            <point key="canvasLocation" x="1174" y="34"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

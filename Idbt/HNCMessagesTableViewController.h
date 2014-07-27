@@ -10,4 +10,6 @@
 
 @interface HNCMessagesTableViewController : UITableViewController
 
+@property (nonatomic, strong) NSMutableArray *messages;
+
 @end

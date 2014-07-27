@@ -10,8 +10,6 @@
 
 @interface HNCTopViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UITextView *textView;
-
 - (IBAction)unwindToTop:(UIStoryboardSegue *)segue;
 - (IBAction)hi:(id)sender;
 
