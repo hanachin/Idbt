@@ -26,6 +26,7 @@
 		B2CDCFAE1983E4E10087F0AF /* HNCIdobataClient.m in Sources */ = {isa = PBXBuildFile; fileRef = B2CDCFAD1983E4E10087F0AF /* HNCIdobataClient.m */; };
 		B2EC47271984EF6000715B48 /* HNCIdobataSeed.m in Sources */ = {isa = PBXBuildFile; fileRef = B2EC47261984EF6000715B48 /* HNCIdobataSeed.m */; };
 		B2EC472A1984FBD600715B48 /* HNCIdobataMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = B2EC47291984FBD600715B48 /* HNCIdobataMessage.m */; };
+		B2EC472D1985181200715B48 /* HNCMessagesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2EC472C1985181200715B48 /* HNCMessagesTableViewController.m */; };
 		F6018AF1175B4999ABE8143C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D9D148599FB435988029055 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +71,8 @@
 		B2EC47261984EF6000715B48 /* HNCIdobataSeed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNCIdobataSeed.m; sourceTree = "<group>"; };
 		B2EC47281984FBD600715B48 /* HNCIdobataMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNCIdobataMessage.h; sourceTree = "<group>"; };
 		B2EC47291984FBD600715B48 /* HNCIdobataMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNCIdobataMessage.m; sourceTree = "<group>"; };
+		B2EC472B1985181200715B48 /* HNCMessagesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNCMessagesTableViewController.h; sourceTree = "<group>"; };
+		B2EC472C1985181200715B48 /* HNCMessagesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNCMessagesTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +149,8 @@
 				B2CDCF821983D66A0087F0AF /* HNCAppDelegate.h */,
 				B2CDCF831983D66A0087F0AF /* HNCAppDelegate.m */,
 				B2CDCFA21983D7B00087F0AF /* Storyboard.storyboard */,
+				B2EC472B1985181200715B48 /* HNCMessagesTableViewController.h */,
+				B2EC472C1985181200715B48 /* HNCMessagesTableViewController.m */,
 				B2CDCF851983D66A0087F0AF /* Images.xcassets */,
 				B2CDCF7A1983D66A0087F0AF /* Supporting Files */,
 			);
@@ -320,6 +325,7 @@
 				B2CDCF801983D66A0087F0AF /* main.m in Sources */,
 				B2EC472A1984FBD600715B48 /* HNCIdobataMessage.m in Sources */,
 				B2CDCFAB1983DEBB0087F0AF /* HNCSettingsViewController.m in Sources */,
+				B2EC472D1985181200715B48 /* HNCMessagesTableViewController.m in Sources */,
 				B2EC47271984EF6000715B48 /* HNCIdobataSeed.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
