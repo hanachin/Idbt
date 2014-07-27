@@ -19,6 +19,7 @@
 {
     self = [super init];
     if (self) {
+        NSLog(@"%@", dictionary);
         self.message = dictionary;
         self.messageId = (NSInteger)self.message[@"id"];
         self.body = self.message[@"body"];
