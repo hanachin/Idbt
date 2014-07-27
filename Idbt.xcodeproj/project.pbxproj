@@ -25,6 +25,7 @@
 		B2CDCFAB1983DEBB0087F0AF /* HNCSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2CDCFAA1983DEBB0087F0AF /* HNCSettingsViewController.m */; };
 		B2CDCFAE1983E4E10087F0AF /* HNCIdobataClient.m in Sources */ = {isa = PBXBuildFile; fileRef = B2CDCFAD1983E4E10087F0AF /* HNCIdobataClient.m */; };
 		B2EC47271984EF6000715B48 /* HNCIdobataSeed.m in Sources */ = {isa = PBXBuildFile; fileRef = B2EC47261984EF6000715B48 /* HNCIdobataSeed.m */; };
+		B2EC472A1984FBD600715B48 /* HNCIdobataMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = B2EC47291984FBD600715B48 /* HNCIdobataMessage.m */; };
 		F6018AF1175B4999ABE8143C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D9D148599FB435988029055 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +68,8 @@
 		B2CDCFAD1983E4E10087F0AF /* HNCIdobataClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNCIdobataClient.m; sourceTree = "<group>"; };
 		B2EC47251984EF6000715B48 /* HNCIdobataSeed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNCIdobataSeed.h; sourceTree = "<group>"; };
 		B2EC47261984EF6000715B48 /* HNCIdobataSeed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNCIdobataSeed.m; sourceTree = "<group>"; };
+		B2EC47281984FBD600715B48 /* HNCIdobataMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNCIdobataMessage.h; sourceTree = "<group>"; };
+		B2EC47291984FBD600715B48 /* HNCIdobataMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNCIdobataMessage.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +134,8 @@
 			children = (
 				B2CDCFAC1983E4E10087F0AF /* HNCIdobataClient.h */,
 				B2CDCFAD1983E4E10087F0AF /* HNCIdobataClient.m */,
+				B2EC47281984FBD600715B48 /* HNCIdobataMessage.h */,
+				B2EC47291984FBD600715B48 /* HNCIdobataMessage.m */,
 				B2EC47251984EF6000715B48 /* HNCIdobataSeed.h */,
 				B2EC47261984EF6000715B48 /* HNCIdobataSeed.m */,
 				B2CDCFA91983DEBB0087F0AF /* HNCSettingsViewController.h */,
@@ -313,6 +318,7 @@
 				B2CDCFAE1983E4E10087F0AF /* HNCIdobataClient.m in Sources */,
 				B2CDCFA71983D85C0087F0AF /* HNCTopViewController.m in Sources */,
 				B2CDCF801983D66A0087F0AF /* main.m in Sources */,
+				B2EC472A1984FBD600715B48 /* HNCIdobataMessage.m in Sources */,
 				B2CDCFAB1983DEBB0087F0AF /* HNCSettingsViewController.m in Sources */,
 				B2EC47271984EF6000715B48 /* HNCIdobataSeed.m in Sources */,
 			);
