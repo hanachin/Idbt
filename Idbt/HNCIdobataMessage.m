@@ -30,6 +30,7 @@
         self.senderId = (NSInteger)self.message[@"sender_id"];
         self.senderName = self.message[@"sender_name"];
         self.senderIconUrl = [NSURL URLWithString: self.message[@"sender_icon_url"]];
+        self.attributedString = [[NSAttributedString alloc] initWithData:[self.body dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes:nil error:nil];
     }
     return self;
 }

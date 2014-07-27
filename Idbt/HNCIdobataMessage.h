@@ -25,6 +25,8 @@
 @property (nonatomic, strong) NSString *senderName;
 @property (nonatomic, strong) NSURL *senderIconUrl;
 
+@property (nonatomic, strong) NSAttributedString *attributedString;
+
 + (HNCIdobataMessage *)idobataMessageWithDictionary:(NSDictionary *)data;
 
 - (HNCIdobataMessage *)initWithDictionary:(NSDictionary *)data;

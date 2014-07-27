@@ -29,9 +29,8 @@
 
 - (void)setupWithMessage:(HNCIdobataMessage *)message
 {
-    NSAttributedString *attributedString = [[NSAttributedString alloc] initWithData:[message.body dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes:nil error:nil];
     self.username.text = message.senderName;
-    self.message.attributedText = attributedString;
+    self.message.attributedText = message.attributedString;
     [self loadIconImage: message.senderIconUrl];
 }
 
