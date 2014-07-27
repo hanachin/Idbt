@@ -94,13 +94,6 @@
 		B2CDCF671983D66A0087F0AF = {
 			isa = PBXGroup;
 			children = (
-				B2CDCFAC1983E4E10087F0AF /* HNCIdobataClient.h */,
-				B2CDCFAD1983E4E10087F0AF /* HNCIdobataClient.m */,
-				B2CDCFA91983DEBB0087F0AF /* HNCSettingsViewController.h */,
-				B2CDCFAA1983DEBB0087F0AF /* HNCSettingsViewController.m */,
-				B2CDCFA41983D85C0087F0AF /* HNCTopViewController.h */,
-				B2CDCFA51983D85C0087F0AF /* HNCTopViewController.m */,
-				B2CDCFA61983D85C0087F0AF /* HNCTopViewController.xib */,
 				B2CDCF791983D66A0087F0AF /* Idbt */,
 				B2CDCF921983D66A0087F0AF /* IdbtTests */,
 				B2CDCF721983D66A0087F0AF /* Frameworks */,
@@ -133,6 +126,13 @@
 		B2CDCF791983D66A0087F0AF /* Idbt */ = {
 			isa = PBXGroup;
 			children = (
+				B2CDCFAC1983E4E10087F0AF /* HNCIdobataClient.h */,
+				B2CDCFAD1983E4E10087F0AF /* HNCIdobataClient.m */,
+				B2CDCFA91983DEBB0087F0AF /* HNCSettingsViewController.h */,
+				B2CDCFAA1983DEBB0087F0AF /* HNCSettingsViewController.m */,
+				B2CDCFA41983D85C0087F0AF /* HNCTopViewController.h */,
+				B2CDCFA51983D85C0087F0AF /* HNCTopViewController.m */,
+				B2CDCFA61983D85C0087F0AF /* HNCTopViewController.xib */,
 				B2CDCF821983D66A0087F0AF /* HNCAppDelegate.h */,
 				B2CDCF831983D66A0087F0AF /* HNCAppDelegate.m */,
 				B2CDCFA21983D7B00087F0AF /* Storyboard.storyboard */,

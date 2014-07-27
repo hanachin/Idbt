@@ -7,7 +7,7 @@
 //
 
 #import "HNCIdobataClient.h"
-#import "Pods/UICKeyChainStore/Lib/UICKeyChainStore.h"
+#import "../Pods/UICKeyChainStore/Lib/UICKeyChainStore.h"
 
 @implementation HNCIdobataClient
 {
