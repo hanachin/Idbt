@@ -131,6 +131,8 @@
 			children = (
 				B2CDCFAC1983E4E10087F0AF /* HNCIdobataClient.h */,
 				B2CDCFAD1983E4E10087F0AF /* HNCIdobataClient.m */,
+				B2EC47251984EF6000715B48 /* HNCIdobataSeed.h */,
+				B2EC47261984EF6000715B48 /* HNCIdobataSeed.m */,
 				B2CDCFA91983DEBB0087F0AF /* HNCSettingsViewController.h */,
 				B2CDCFAA1983DEBB0087F0AF /* HNCSettingsViewController.m */,
 				B2CDCFA41983D85C0087F0AF /* HNCTopViewController.h */,
@@ -141,8 +143,6 @@
 				B2CDCFA21983D7B00087F0AF /* Storyboard.storyboard */,
 				B2CDCF851983D66A0087F0AF /* Images.xcassets */,
 				B2CDCF7A1983D66A0087F0AF /* Supporting Files */,
-				B2EC47251984EF6000715B48 /* HNCIdobataSeed.h */,
-				B2EC47261984EF6000715B48 /* HNCIdobataSeed.m */,
 			);
 			path = Idbt;
 			sourceTree = "<group>";
