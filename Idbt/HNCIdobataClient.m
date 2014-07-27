@@ -8,6 +8,7 @@
 
 #import "HNCIdobataClient.h"
 #import "../Pods/UICKeyChainStore/Lib/UICKeyChainStore.h"
+#import "../Pods/Underscore.m/Underscore/Underscore+Functional.h"
 
 @implementation HNCIdobataClient
 {
@@ -39,6 +40,24 @@
         [[NSOperationQueue mainQueue] addOperationWithBlock:^(void) {
             if (!error) {
                 completionHandler([HNCIdobataSeed idobataSeedWithData:data], response, error);
+            } else {
+                completionHandler(nil, response, error);
+            }
+        }];
+    }];
+}
+
+- (void)messages:(void (^)(NSArray *messages, NSURLResponse *response, NSError *error))completionHandler
+{
+    NSURL *url = [NSURL URLWithString: @"https://idobata.io/api/messages"];
+    [self request:url completionHandler: ^(NSData *data, NSURLResponse *response, NSError *error) {
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^(void) {
+            if (!error) {
+                NSArray *messages = Underscore.array([NSJSONSerialization JSONObjectWithData: data options:0 error:nil][@"messages"])
+                .map(^HNCIdobataMessage *(NSDictionary *dict) {
+                    return [HNCIdobataMessage idobataMessageWithDictionary: dict];
+                }).unwrap;
+                completionHandler(messages, response, error);
             } else {
                 completionHandler(nil, response, error);
             }
