@@ -32,12 +32,16 @@
     return self;
 }
 
-- (void)seed:(void (^)(NSData *data, NSURLResponse *response, NSError *error))completionHandler;
+- (void)seed:(void (^)(HNCIdobataSeed *seed, NSURLResponse *response, NSError *error))completionHandler;
 {
     NSURL *url = [NSURL URLWithString: @"https://idobata.io/api/seed"];
     [[[self defaultSession] dataTaskWithURL: url completionHandler: ^(NSData *data, NSURLResponse *response, NSError *error) {
         [[NSOperationQueue mainQueue] addOperationWithBlock:^(void) {
-            completionHandler(data, response, error);
+            if (!error) {
+                completionHandler([HNCIdobataSeed idobataSeedWithData:data], response, error);
+            } else {
+                completionHandler(nil, response, error);
+            }
         }];
     }] resume];
 }

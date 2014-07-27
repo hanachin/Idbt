@@ -42,11 +42,10 @@
 
 - (IBAction)hi:(id)sender
 {
-    [[HNCIdobataClient defaultClient] seed: ^(NSData *data, NSURLResponse *response, NSError *error) {
+    [[HNCIdobataClient defaultClient] seed: ^(HNCIdobataSeed *seed, NSURLResponse *response, NSError *error) {
         NSLog(@"Got response %@ with error %@.\n", response, error);
-        NSString *json = [[NSString alloc] initWithData: data encoding: NSUTF8StringEncoding];
-        NSLog(@"DATA:\n%@\nEND DATA\n", json);
-        self.textView.text = json;
+        NSLog(@"DATA:\n%@\nEND DATA\n", seed.json);
+        self.textView.text = seed.json;
     }];
     self.textView.text = @"hi";
 }

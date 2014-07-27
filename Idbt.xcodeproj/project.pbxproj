@@ -24,6 +24,7 @@
 		B2CDCFA81983D85C0087F0AF /* HNCTopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2CDCFA61983D85C0087F0AF /* HNCTopViewController.xib */; };
 		B2CDCFAB1983DEBB0087F0AF /* HNCSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2CDCFAA1983DEBB0087F0AF /* HNCSettingsViewController.m */; };
 		B2CDCFAE1983E4E10087F0AF /* HNCIdobataClient.m in Sources */ = {isa = PBXBuildFile; fileRef = B2CDCFAD1983E4E10087F0AF /* HNCIdobataClient.m */; };
+		B2EC47271984EF6000715B48 /* HNCIdobataSeed.m in Sources */ = {isa = PBXBuildFile; fileRef = B2EC47261984EF6000715B48 /* HNCIdobataSeed.m */; };
 		F6018AF1175B4999ABE8143C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D9D148599FB435988029055 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +65,8 @@
 		B2CDCFAA1983DEBB0087F0AF /* HNCSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNCSettingsViewController.m; sourceTree = "<group>"; };
 		B2CDCFAC1983E4E10087F0AF /* HNCIdobataClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNCIdobataClient.h; sourceTree = "<group>"; };
 		B2CDCFAD1983E4E10087F0AF /* HNCIdobataClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNCIdobataClient.m; sourceTree = "<group>"; };
+		B2EC47251984EF6000715B48 /* HNCIdobataSeed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNCIdobataSeed.h; sourceTree = "<group>"; };
+		B2EC47261984EF6000715B48 /* HNCIdobataSeed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNCIdobataSeed.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +141,8 @@
 				B2CDCFA21983D7B00087F0AF /* Storyboard.storyboard */,
 				B2CDCF851983D66A0087F0AF /* Images.xcassets */,
 				B2CDCF7A1983D66A0087F0AF /* Supporting Files */,
+				B2EC47251984EF6000715B48 /* HNCIdobataSeed.h */,
+				B2EC47261984EF6000715B48 /* HNCIdobataSeed.m */,
 			);
 			path = Idbt;
 			sourceTree = "<group>";
@@ -309,6 +314,7 @@
 				B2CDCFA71983D85C0087F0AF /* HNCTopViewController.m in Sources */,
 				B2CDCF801983D66A0087F0AF /* main.m in Sources */,
 				B2CDCFAB1983DEBB0087F0AF /* HNCSettingsViewController.m in Sources */,
+				B2EC47271984EF6000715B48 /* HNCIdobataSeed.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

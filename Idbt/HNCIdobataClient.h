@@ -7,11 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "HNCIdobataSeed.h"
 
 @interface HNCIdobataClient : NSObject
 
 + (HNCIdobataClient *)defaultClient;
 - (HNCIdobataClient *)initWithEmail:(NSString *)email password:(NSString *)password;
-- (void)seed:(void (^)(NSData *data, NSURLResponse *response, NSError *error))completionHandler;
+- (void)seed:(void (^)(HNCIdobataSeed *seed, NSURLResponse *response, NSError *error))completionHandler;
 
 @end
