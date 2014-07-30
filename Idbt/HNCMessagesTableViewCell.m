@@ -7,6 +7,7 @@
 //
 
 #import "HNCMessagesTableViewCell.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @implementation HNCMessagesTableViewCell
 
@@ -31,23 +32,7 @@
 {
     self.username.text = message.senderName;
     self.message.attributedText = message.attributedString;
-    [self loadIconImage: message.senderIconUrl];
-}
-
-- (void)loadIconImage:(NSURL *)url
-{
-    NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
-    NSURLSession *session = [NSURLSession sessionWithConfiguration:config];
-    NSURLSessionDataTask *task = [session dataTaskWithURL: url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        if (!error) {
-            UIImage *image = [UIImage imageWithData: data];
-            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                self.icon.image = image;
-                [self setNeedsLayout];
-            }];
-        }
-    }];
-    [task resume];
+    [self.icon sd_setImageWithURL: message.senderIconUrl];
 }
 
 @end
