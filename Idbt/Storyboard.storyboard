@@ -62,7 +62,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b9b-3W-4zT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="617" y="73"/>
+            <point key="canvasLocation" x="469" y="73"/>
         </scene>
         <!--Messages Table View Controller-->
         <scene sceneID="B2m-MI-Qh8">
@@ -92,7 +92,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BFt-nr-hdg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1011" y="739"/>
+            <point key="canvasLocation" x="1026" y="777"/>
         </scene>
         <!--Settings View Controller - Settings-->
         <scene sceneID="MId-3F-y2J">
@@ -167,7 +167,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Zm-SP-MOE" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="0SM-ob-hUw" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1515" y="73"/>
+            <point key="canvasLocation" x="1429" y="73"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6az-uF-UAN">
@@ -203,7 +203,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UjB-Pf-DbJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1174" y="34"/>
+            <point key="canvasLocation" x="1026" y="73"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
