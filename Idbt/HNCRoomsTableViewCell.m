@@ -8,12 +8,15 @@
 
 #import "HNCRoomsTableViewCell.h"
 #import "HNCRoomsTableViewConstant.h"
+#import "../Pods/FontAwesomeKit//FontAwesomeKit/FontAwesomeKit.h"
 
 @implementation HNCRoomsTableViewCell
 
 - (void)awakeFromNib
 {
     // Initialization code
+    FAKFontAwesome *icon = [FAKFontAwesome chevronRightIconWithSize:16];
+    [self.goButton setAttributedTitle:icon.attributedString forState:UIControlStateNormal];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
@@ -27,6 +30,11 @@
 {
     self.room = room;
     self.roomName.text = room.name;
+}
+
+- (IBAction)go:(id)sender
+{
+    NSLog(@"%@", sender);
 }
 
 @end
