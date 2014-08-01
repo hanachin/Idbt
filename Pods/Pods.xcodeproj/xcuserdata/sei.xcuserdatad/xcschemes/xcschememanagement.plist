@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Pods-FontAwesomeKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-SDWebImage.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,22 +32,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0E334F119A0543698AA3F6D9</key>
+		<key>1D38ADEC93904D97B50C4FB0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CCF71BA7C20F41939348A5EF</key>
+		<key>362993D41E2A49FD849B5E93</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DC7278AC62EA43FBA7736AF4</key>
+		<key>747C8B0202B641D79E6622F8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DCEA1E9275C64EAFBB0F963A</key>
+		<key>A59CD3F01EFE4F908C2F744D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CAE962AC731E4DFB84287291</key>
 		<dict>
 			<key>primary</key>
 			<true/>
