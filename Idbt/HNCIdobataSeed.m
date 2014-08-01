@@ -7,6 +7,7 @@
 //
 
 #import "HNCIdobataSeed.h"
+#import "HNCIdobataRoom.h"
 
 @implementation HNCIdobataSeed
 
@@ -32,7 +33,10 @@
 
 - (NSArray *)rooms
 {
-    return self.seed[@"records"][@"rooms"];
+    return Underscore.array(self.seed[@"records"][@"rooms"])
+    .map(^HNCIdobataRoom *(NSDictionary *room) {
+        return [[HNCIdobataRoom alloc] initWithDictionary: room];
+    }).unwrap;
 }
 
 - (NSDictionary *)user

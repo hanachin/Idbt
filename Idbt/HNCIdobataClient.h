@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "HNCIdobataSeed.h"
 #import "HNCIdobataMessage.h"
+#import "HNCIdobataRoom.h"
 
 @interface HNCIdobataClient : NSObject
 

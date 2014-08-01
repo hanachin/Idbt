@@ -24,12 +24,17 @@
 		B2CDCFA81983D85C0087F0AF /* HNCTopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2CDCFA61983D85C0087F0AF /* HNCTopViewController.xib */; };
 		B2CDCFAB1983DEBB0087F0AF /* HNCSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2CDCFAA1983DEBB0087F0AF /* HNCSettingsViewController.m */; };
 		B2CDCFAE1983E4E10087F0AF /* HNCIdobataClient.m in Sources */ = {isa = PBXBuildFile; fileRef = B2CDCFAD1983E4E10087F0AF /* HNCIdobataClient.m */; };
+		B2E8EACF198BEB1500B1B415 /* HNCRoomsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E8EACD198BEB1500B1B415 /* HNCRoomsTableViewCell.m */; };
+		B2E8EAD0198BEB1500B1B415 /* HNCRoomsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2E8EACE198BEB1500B1B415 /* HNCRoomsTableViewCell.xib */; };
 		B2EC47271984EF6000715B48 /* HNCIdobataSeed.m in Sources */ = {isa = PBXBuildFile; fileRef = B2EC47261984EF6000715B48 /* HNCIdobataSeed.m */; };
 		B2EC472A1984FBD600715B48 /* HNCIdobataMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = B2EC47291984FBD600715B48 /* HNCIdobataMessage.m */; };
 		B2EC472D1985181200715B48 /* HNCMessagesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2EC472C1985181200715B48 /* HNCMessagesTableViewController.m */; };
 		B2EC473219851A7A00715B48 /* HNCMessagesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2EC473019851A7A00715B48 /* HNCMessagesTableViewCell.m */; };
 		B2EC473319851A7A00715B48 /* HNCMessagesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2EC473119851A7A00715B48 /* HNCMessagesTableViewCell.xib */; };
 		B2EC473619851F2500715B48 /* HNCMessagesTableViewConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = B2EC473519851F2500715B48 /* HNCMessagesTableViewConstant.m */; };
+		B2F05318198A6EF80026CC72 /* HNCRoomsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F05316198A6EF80026CC72 /* HNCRoomsTableViewController.m */; };
+		B2F05319198A6EF80026CC72 /* HNCRoomsControllerTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2F05317198A6EF80026CC72 /* HNCRoomsControllerTableViewController.xib */; };
+		B2F0531F198A72760026CC72 /* HNCIdobataRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F0531E198A72760026CC72 /* HNCIdobataRoom.m */; };
 		F6018AF1175B4999ABE8143C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D9D148599FB435988029055 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +75,10 @@
 		B2CDCFAA1983DEBB0087F0AF /* HNCSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNCSettingsViewController.m; sourceTree = "<group>"; };
 		B2CDCFAC1983E4E10087F0AF /* HNCIdobataClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNCIdobataClient.h; sourceTree = "<group>"; };
 		B2CDCFAD1983E4E10087F0AF /* HNCIdobataClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNCIdobataClient.m; sourceTree = "<group>"; };
+		B2E8EACC198BEB1500B1B415 /* HNCRoomsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNCRoomsTableViewCell.h; sourceTree = "<group>"; };
+		B2E8EACD198BEB1500B1B415 /* HNCRoomsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNCRoomsTableViewCell.m; sourceTree = "<group>"; };
+		B2E8EACE198BEB1500B1B415 /* HNCRoomsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HNCRoomsTableViewCell.xib; sourceTree = "<group>"; };
+		B2E8EAD1198BEC3700B1B415 /* HNCRoomsTableViewConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNCRoomsTableViewConstant.h; sourceTree = "<group>"; };
 		B2EC47251984EF6000715B48 /* HNCIdobataSeed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNCIdobataSeed.h; sourceTree = "<group>"; };
 		B2EC47261984EF6000715B48 /* HNCIdobataSeed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNCIdobataSeed.m; sourceTree = "<group>"; };
 		B2EC47281984FBD600715B48 /* HNCIdobataMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNCIdobataMessage.h; sourceTree = "<group>"; };
@@ -81,6 +90,11 @@
 		B2EC473119851A7A00715B48 /* HNCMessagesTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HNCMessagesTableViewCell.xib; sourceTree = "<group>"; };
 		B2EC473419851F2500715B48 /* HNCMessagesTableViewConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNCMessagesTableViewConstant.h; sourceTree = "<group>"; };
 		B2EC473519851F2500715B48 /* HNCMessagesTableViewConstant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNCMessagesTableViewConstant.m; sourceTree = "<group>"; };
+		B2F05315198A6EF80026CC72 /* HNCRoomsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNCRoomsTableViewController.h; sourceTree = "<group>"; };
+		B2F05316198A6EF80026CC72 /* HNCRoomsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNCRoomsTableViewController.m; sourceTree = "<group>"; };
+		B2F05317198A6EF80026CC72 /* HNCRoomsControllerTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HNCRoomsControllerTableViewController.xib; sourceTree = "<group>"; };
+		B2F0531D198A72760026CC72 /* HNCIdobataRoom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNCIdobataRoom.h; sourceTree = "<group>"; };
+		B2F0531E198A72760026CC72 /* HNCIdobataRoom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNCIdobataRoom.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +162,8 @@
 				B2CDCFAD1983E4E10087F0AF /* HNCIdobataClient.m */,
 				B2EC47281984FBD600715B48 /* HNCIdobataMessage.h */,
 				B2EC47291984FBD600715B48 /* HNCIdobataMessage.m */,
+				B2F0531D198A72760026CC72 /* HNCIdobataRoom.h */,
+				B2F0531E198A72760026CC72 /* HNCIdobataRoom.m */,
 				B2EC47251984EF6000715B48 /* HNCIdobataSeed.h */,
 				B2EC47261984EF6000715B48 /* HNCIdobataSeed.m */,
 				B2CDCFA91983DEBB0087F0AF /* HNCSettingsViewController.h */,
@@ -158,8 +174,15 @@
 				B2CDCF821983D66A0087F0AF /* HNCAppDelegate.h */,
 				B2CDCF831983D66A0087F0AF /* HNCAppDelegate.m */,
 				B2CDCFA21983D7B00087F0AF /* Storyboard.storyboard */,
+				B2F05315198A6EF80026CC72 /* HNCRoomsTableViewController.h */,
+				B2F05316198A6EF80026CC72 /* HNCRoomsTableViewController.m */,
+				B2E8EACC198BEB1500B1B415 /* HNCRoomsTableViewCell.h */,
+				B2E8EACD198BEB1500B1B415 /* HNCRoomsTableViewCell.m */,
+				B2E8EACE198BEB1500B1B415 /* HNCRoomsTableViewCell.xib */,
+				B2F05317198A6EF80026CC72 /* HNCRoomsControllerTableViewController.xib */,
 				B2EC472B1985181200715B48 /* HNCMessagesTableViewController.h */,
 				B2EC472C1985181200715B48 /* HNCMessagesTableViewController.m */,
+				B2E8EAD1198BEC3700B1B415 /* HNCRoomsTableViewConstant.h */,
 				B2CDCF851983D66A0087F0AF /* Images.xcassets */,
 				B2CDCF7A1983D66A0087F0AF /* Supporting Files */,
 				B2EC473419851F2500715B48 /* HNCMessagesTableViewConstant.h */,
@@ -285,10 +308,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2F05319198A6EF80026CC72 /* HNCRoomsControllerTableViewController.xib in Resources */,
 				B2CDCFA81983D85C0087F0AF /* HNCTopViewController.xib in Resources */,
 				B2CDCF7E1983D66A0087F0AF /* InfoPlist.strings in Resources */,
 				B2EC473319851A7A00715B48 /* HNCMessagesTableViewCell.xib in Resources */,
 				B2CDCF861983D66A0087F0AF /* Images.xcassets in Resources */,
+				B2E8EAD0198BEB1500B1B415 /* HNCRoomsTableViewCell.xib in Resources */,
 				B2CDCFA31983D7B00087F0AF /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -343,12 +368,15 @@
 			files = (
 				B2CDCF841983D66A0087F0AF /* HNCAppDelegate.m in Sources */,
 				B2EC473619851F2500715B48 /* HNCMessagesTableViewConstant.m in Sources */,
+				B2F05318198A6EF80026CC72 /* HNCRoomsTableViewController.m in Sources */,
 				B2CDCFAE1983E4E10087F0AF /* HNCIdobataClient.m in Sources */,
 				B2CDCFA71983D85C0087F0AF /* HNCTopViewController.m in Sources */,
 				B2EC473219851A7A00715B48 /* HNCMessagesTableViewCell.m in Sources */,
 				B2CDCF801983D66A0087F0AF /* main.m in Sources */,
 				B2EC472A1984FBD600715B48 /* HNCIdobataMessage.m in Sources */,
+				B2E8EACF198BEB1500B1B415 /* HNCRoomsTableViewCell.m in Sources */,
 				B2CDCFAB1983DEBB0087F0AF /* HNCSettingsViewController.m in Sources */,
+				B2F0531F198A72760026CC72 /* HNCIdobataRoom.m in Sources */,
 				B2EC472D1985181200715B48 /* HNCMessagesTableViewController.m in Sources */,
 				B2EC47271984EF6000715B48 /* HNCIdobataSeed.m in Sources */,
 			);

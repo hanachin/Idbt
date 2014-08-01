@@ -9,7 +9,6 @@
 #import "HNCTopViewController.h"
 #import "HNCIdobataClient.h"
 #import "HNCMessagesTableViewController.h"
-#import "../Pods/Underscore.m/Underscore/Underscore+Functional.h"
 
 @interface HNCTopViewController ()
 
