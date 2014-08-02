@@ -136,7 +136,13 @@
                             <outlet property="delegate" destination="U1W-zn-3gi" id="TQ5-R9-rOO"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="q4y-s9-RCB"/>
+                    <navigationItem key="navigationItem" id="q4y-s9-RCB">
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="tvv-ld-MOZ">
+                            <connections>
+                                <segue destination="fok-PD-UGm" kind="modal" id="07V-5c-zzL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BFt-nr-hdg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
