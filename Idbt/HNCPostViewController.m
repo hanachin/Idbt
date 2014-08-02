@@ -47,8 +47,16 @@
 */
 
 - (IBAction)cancel:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:^{
+        // do nothing
+    }];
 }
 
 - (IBAction)done:(id)sender {
+    NSLog(@"%@, %@", @"done", self.body.text);
+    [self dismissViewControllerAnimated:YES completion:^{
+        // do nothing
+    }];
 }
+
 @end
