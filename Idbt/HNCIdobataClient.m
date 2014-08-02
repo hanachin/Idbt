@@ -78,6 +78,26 @@
     }];
 }
 
+
+- (void)post:(NSString *)body toRoom:(NSUInteger)room_id completeHandler:(void (^)(NSDictionary *dictionary, NSURLResponse *response, NSError *error))completeHandler
+{
+    NSURL *url = [NSURL URLWithString:@"https://idobata.io/api/messages"];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL: url];
+    [request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    NSDictionary *params = @{@"room_id": [NSNumber numberWithUnsignedInteger: room_id], @"source":body};
+    NSLog(@"%@", params);
+    NSData *postData = [NSJSONSerialization dataWithJSONObject:params options:0 error:nil];
+    [request setHTTPBody: postData];
+    [request setHTTPMethod:@"POST"];
+    [[[self defaultSession] dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        NSLog(@"%@", error);
+        NSDictionary *json = [NSJSONSerialization JSONObjectWithData: data options:0 error:nil];
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            completeHandler(json, response, error);
+        }];
+    }] resume];
+}
+
 - (void)request:(NSURL *)url completionHandler:(void (^)(NSData *data, NSURLResponse *response, NSError *error))completionHandler
 {
     [[[self defaultSession] dataTaskWithURL: url completionHandler: completionHandler] resume];
@@ -109,7 +129,4 @@
     return [NSURLSession sessionWithConfiguration: [self defaultConfiguration]];
 }
 
-/*
-
- */
 @end
