@@ -46,4 +46,9 @@
 }
 */
 
+- (IBAction)cancel:(id)sender {
+}
+
+- (IBAction)done:(id)sender {
+}
 @end

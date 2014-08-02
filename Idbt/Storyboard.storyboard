@@ -171,9 +171,20 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="vbz-We-xWS">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Z0x-b9-CoT"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="AHB-22-2eT"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Z0x-b9-CoT">
+                            <connections>
+                                <action selector="cancel:" destination="pYn-kT-3OY" id="eXx-3q-4ai"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="AHB-22-2eT">
+                            <connections>
+                                <action selector="done:" destination="pYn-kT-3OY" id="bNk-IB-x9w"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="body" destination="vn4-l7-RMf" id="OeW-JC-mmV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ekq-jL-SR4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
