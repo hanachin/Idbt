@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B22009A5198C8D4000C32CBD /* HNCIdobataApp.m in Sources */ = {isa = PBXBuildFile; fileRef = B22009A4198C8D4000C32CBD /* HNCIdobataApp.m */; };
 		B2CDCF741983D66A0087F0AF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2CDCF731983D66A0087F0AF /* Foundation.framework */; };
 		B2CDCF761983D66A0087F0AF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2CDCF751983D66A0087F0AF /* CoreGraphics.framework */; };
 		B2CDCF781983D66A0087F0AF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2CDCF771983D66A0087F0AF /* UIKit.framework */; };
@@ -51,6 +52,8 @@
 /* Begin PBXFileReference section */
 		0D9D148599FB435988029055 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F9DE2857D744BBFBB95DC41 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		B22009A3198C8D4000C32CBD /* HNCIdobataApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNCIdobataApp.h; sourceTree = "<group>"; };
+		B22009A4198C8D4000C32CBD /* HNCIdobataApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNCIdobataApp.m; sourceTree = "<group>"; };
 		B2CDCF701983D66A0087F0AF /* Idbt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Idbt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2CDCF731983D66A0087F0AF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B2CDCF751983D66A0087F0AF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -122,6 +125,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B22009A2198C8D2200C32CBD /* Idobata */ = {
+			isa = PBXGroup;
+			children = (
+				B2CDCFAC1983E4E10087F0AF /* HNCIdobataClient.h */,
+				B2CDCFAD1983E4E10087F0AF /* HNCIdobataClient.m */,
+				B2EC47281984FBD600715B48 /* HNCIdobataMessage.h */,
+				B2EC47291984FBD600715B48 /* HNCIdobataMessage.m */,
+				B2F0531D198A72760026CC72 /* HNCIdobataRoom.h */,
+				B2F0531E198A72760026CC72 /* HNCIdobataRoom.m */,
+				B2EC47251984EF6000715B48 /* HNCIdobataSeed.h */,
+				B2EC47261984EF6000715B48 /* HNCIdobataSeed.m */,
+				B22009A3198C8D4000C32CBD /* HNCIdobataApp.h */,
+				B22009A4198C8D4000C32CBD /* HNCIdobataApp.m */,
+			);
+			name = Idobata;
+			sourceTree = "<group>";
+		};
 		B2CDCF671983D66A0087F0AF = {
 			isa = PBXGroup;
 			children = (
@@ -157,15 +177,8 @@
 		B2CDCF791983D66A0087F0AF /* Idbt */ = {
 			isa = PBXGroup;
 			children = (
+				B22009A2198C8D2200C32CBD /* Idobata */,
 				B2EC472E19851A2C00715B48 /* MessagesTableCell */,
-				B2CDCFAC1983E4E10087F0AF /* HNCIdobataClient.h */,
-				B2CDCFAD1983E4E10087F0AF /* HNCIdobataClient.m */,
-				B2EC47281984FBD600715B48 /* HNCIdobataMessage.h */,
-				B2EC47291984FBD600715B48 /* HNCIdobataMessage.m */,
-				B2F0531D198A72760026CC72 /* HNCIdobataRoom.h */,
-				B2F0531E198A72760026CC72 /* HNCIdobataRoom.m */,
-				B2EC47251984EF6000715B48 /* HNCIdobataSeed.h */,
-				B2EC47261984EF6000715B48 /* HNCIdobataSeed.m */,
 				B2CDCFA91983DEBB0087F0AF /* HNCSettingsViewController.h */,
 				B2CDCFAA1983DEBB0087F0AF /* HNCSettingsViewController.m */,
 				B2CDCFA41983D85C0087F0AF /* HNCTopViewController.h */,
@@ -368,6 +381,7 @@
 			files = (
 				B2CDCF841983D66A0087F0AF /* HNCAppDelegate.m in Sources */,
 				B2EC473619851F2500715B48 /* HNCMessagesTableViewConstant.m in Sources */,
+				B22009A5198C8D4000C32CBD /* HNCIdobataApp.m in Sources */,
 				B2F05318198A6EF80026CC72 /* HNCRoomsTableViewController.m in Sources */,
 				B2CDCFAE1983E4E10087F0AF /* HNCIdobataClient.m in Sources */,
 				B2CDCFA71983D85C0087F0AF /* HNCTopViewController.m in Sources */,

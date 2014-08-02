@@ -12,11 +12,7 @@
 @interface HNCRoomsTableViewCell : UITableViewCell
 
 @property (strong, nonatomic) HNCIdobataRoom *room;
-@property (weak, nonatomic) IBOutlet UIButton *goButton;
-@property (weak, nonatomic) IBOutlet UILabel *roomName;
 
 - (void)setupWithRoom:(HNCIdobataRoom *)room;
-
-- (IBAction)go:(id)sender;
 
 @end

@@ -46,7 +46,7 @@
 
 - (NSInteger)version
 {
-    return (NSInteger)self.seed[@"version"];
+    return [self.seed[@"version"] integerValue];
 }
 
 @end

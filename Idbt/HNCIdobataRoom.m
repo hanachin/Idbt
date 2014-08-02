@@ -19,11 +19,11 @@
 {
     self = [super init];
     if (self) {
-        self.roomId = (NSInteger)dictionary[@"id"];
+        self.roomId = [dictionary[@"id"] integerValue];
         self.earlyMemberIds = dictionary[@"early_member_ids"];
         self.joined = dictionary[@"joined"];
         self.name = dictionary[@"name"];
-        self.organizationId = (NSInteger)dictionary[@"organization_id"];
+        self.organizationId = [dictionary[@"organization_id"] integerValue];
         self.partial = dictionary[@"partial"];
         self.unreadMentionIds = dictionary[@"unread_mention_ids"];
         self.unreadMessageIds = dictionary[@"unread_messages_ids"];

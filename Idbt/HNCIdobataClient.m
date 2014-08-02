@@ -46,10 +46,22 @@
         }];
     }];
 }
-
+- (void)roomMessages:(NSInteger)roomId completeHandler:(void (^)(NSArray *messages, NSURLResponse *response, NSError *error))completionHandler
+{
+    NSString *urlString = [NSString stringWithFormat:@"%@?room_id=%ld", @"https://idobata.io/api/messages", roomId];
+    NSLog(@"%@", urlString);
+    NSURL *url = [NSURL URLWithString: urlString];
+    [self messages:url completeHandler:completionHandler];
+}
+    
 - (void)messages:(void (^)(NSArray *messages, NSURLResponse *response, NSError *error))completionHandler
 {
     NSURL *url = [NSURL URLWithString: @"https://idobata.io/api/messages"];
+    [self messages:url completeHandler:completionHandler];
+}
+
+- (void)messages:(NSURL *)url completeHandler:(void (^)(NSArray *messages, NSURLResponse *response, NSError *error))completionHandler
+{
     [self request:url completionHandler: ^(NSData *data, NSURLResponse *response, NSError *error) {
         [[NSOperationQueue mainQueue] addOperationWithBlock:^(void) {
             if (!error) {
@@ -59,6 +71,7 @@
                 }).unwrap;
                 completionHandler(messages, response, error);
             } else {
+                NSLog(@"%@", error);
                 completionHandler(nil, response, error);
             }
         }];

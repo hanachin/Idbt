@@ -20,14 +20,14 @@
     self = [super init];
     if (self) {
         self.message = dictionary;
-        self.messageId = (NSInteger)self.message[@"id"];
+        self.messageId = [self.message[@"id"] integerValue];
         self.body = self.message[@"body"];
         self.imageUrls = self.message[@"image_urls"];
         self.mentions = self.message[@"mentions"];
         self.createdAt = self.message[@"created_at"];
-        self.roomId = (NSInteger)self.message[@"room_id"];
+        self.roomId = [self.message[@"room_id"] integerValue];
         self.senderType = self.message[@"sender_type"];
-        self.senderId = (NSInteger)self.message[@"sender_id"];
+        self.senderId = [self.message[@"sender_id"] integerValue];
         self.senderName = self.message[@"sender_name"];
         self.senderIconUrl = [NSURL URLWithString: self.message[@"sender_icon_url"]];
         self.attributedString = [[NSAttributedString alloc] initWithData:[self.body dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes:nil error:nil];

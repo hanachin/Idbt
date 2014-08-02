@@ -10,6 +10,7 @@
 #import "HNCRoomsTableViewCell.h"
 #import "HNCIdobataClient.h"
 #import "HNCRoomsTableViewConstant.h"
+#import "HNCMessagesTableViewController.h"
 
 @interface HNCRoomsTableViewController ()
 
@@ -27,8 +28,9 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    UINib *roomsTableCellNib = [UINib nibWithNibName:HNCRoomsTableViewCellIdentifier bundle:nil];
-    [self.tableView registerNib:roomsTableCellNib forCellReuseIdentifier:HNCRoomsTableViewCellIdentifier];
+    // UINib *roomsTableCellNib = [UINib nibWithNibName:HNCRoomsTableViewCellIdentifier bundle:nil];
+    // [self.tableView registerNib:roomsTableCellNib forCellReuseIdentifier:HNCRoomsTableViewCellIdentifier];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -41,18 +43,33 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return self.seed.organizations.count;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return [self.seed.organizations objectAtIndex:section][@"name"];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.rooms.count;
+    NSInteger organizationId = [[self.seed.organizations objectAtIndex:section][@"id"] integerValue];
+    return Underscore.array(self.rooms)
+    .reject(^BOOL (HNCIdobataRoom *room) {
+        return room.organizationId != organizationId;
+    }).unwrap.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSInteger organizationId = [[self.seed.organizations objectAtIndex:indexPath.section][@"id"] integerValue];
+    NSArray *rooms = Underscore.array(self.rooms)
+    .reject(^BOOL (HNCIdobataRoom *room) {
+        return room.organizationId != organizationId;
+    }).unwrap;
+
     HNCRoomsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:HNCRoomsTableViewCellIdentifier forIndexPath:indexPath];
-    [cell setupWithRoom: [self.rooms objectAtIndex:indexPath.row]];
+    [cell setupWithRoom: [rooms objectAtIndex:indexPath.row]];
     return cell;
 }
 
@@ -93,7 +110,6 @@
     return YES;
 }
 */
-
 /*
 #pragma mark - Table view delegate
 
@@ -102,14 +118,15 @@
 {
     // Navigation logic may go here, for example:
     // Create the next view controller.
-    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:<#@"Nib name"#> bundle:nil];
+    // <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:<#@"Nib name"#> bundle:nil];
     
     // Pass the selected object to the new view controller.
     
     // Push the view controller.
-    [self.navigationController pushViewController:detailViewController animated:YES];
+    // [self.navigationController pushViewController:detailViewController animated:YES];
+    NSLog(@"%@ clicked", [[self.rooms objectAtIndex:indexPath.row] name]);
 }
-*/
+ */
 
 - (IBAction)refreshRooms:(id)sender
 {
@@ -119,6 +136,22 @@
         NSLog(@"%@", seed);
         [self.tableView reloadData];
     }];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSLog(@"%@", segue.identifier);
+    if ([segue.identifier isEqualToString:@"room selected"]) {
+        HNCRoomsTableViewCell *cell = (HNCRoomsTableViewCell*)[self.tableView cellForRowAtIndexPath:[self.tableView indexPathForSelectedRow]];
+        NSLog(@"%@", cell.room.name);
+        HNCMessagesTableViewController *controller = (HNCMessagesTableViewController *)segue.destinationViewController;
+        [[HNCIdobataClient defaultClient] roomMessages: cell.room.roomId completeHandler:^(NSArray *messages, NSURLResponse *response, NSError *error) {
+            [controller.messages addObjectsFromArray: messages];
+            [controller.tableView reloadData];
+        }];
+    }
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
 }
 
 @end
