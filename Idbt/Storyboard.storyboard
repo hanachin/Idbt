@@ -155,10 +155,11 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="vbz-We-xWS"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ekq-jL-SR4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1429" y="890"/>
+            <point key="canvasLocation" x="1955" y="890"/>
         </scene>
         <!--Settings View Controller - Settings-->
         <scene sceneID="MId-3F-y2J">
@@ -288,6 +289,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VId-cG-ZQP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="78" y="785"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="GmK-0q-p3s">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fok-PD-UGm" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="e0B-yC-JnA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="pYn-kT-3OY" kind="relationship" relationship="rootViewController" id="5cP-ts-JhK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SKB-TS-fcU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1429" y="890"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
