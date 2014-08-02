@@ -11,6 +11,7 @@
 
 @interface HNCRoomsTableViewController : UITableViewController
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *setting;
 @property (nonatomic, strong) HNCIdobataSeed *seed;
 @property (nonatomic, strong) NSArray *rooms;
 

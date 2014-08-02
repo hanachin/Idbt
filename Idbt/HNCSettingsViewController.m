@@ -55,4 +55,10 @@
     [self performSegueWithIdentifier:@"setting done" sender:self];
 }
 
+- (IBAction)cancel:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:^{
+        // do nothing;
+    }];
+}
+
 @end

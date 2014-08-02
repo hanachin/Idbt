@@ -11,6 +11,7 @@
 #import "HNCIdobataClient.h"
 #import "HNCRoomsTableViewConstant.h"
 #import "HNCMessagesTableViewController.h"
+#import "../Pods/FontAwesomeKit/FontAwesomeKit/FontAwesomeKit.h"
 
 @interface HNCRoomsTableViewController ()
 
@@ -30,7 +31,8 @@
     
     // UINib *roomsTableCellNib = [UINib nibWithNibName:HNCRoomsTableViewCellIdentifier bundle:nil];
     // [self.tableView registerNib:roomsTableCellNib forCellReuseIdentifier:HNCRoomsTableViewCellIdentifier];
-    
+    FAKFontAwesome *settingIcon = [FAKFontAwesome gearIconWithSize: 28.0];
+    self.setting.image = [settingIcon imageWithSize: CGSizeMake(28.0, 28.0)];
 }
 
 - (void)didReceiveMemoryWarning

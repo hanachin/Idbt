@@ -14,5 +14,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *password;
 
 - (IBAction)done:(id)sender;
+- (IBAction)cancel:(id)sender;
 
 @end

@@ -100,12 +100,20 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="uo7-ec-WfY">
+                        <barButtonItem key="leftBarButtonItem" id="lJP-9X-Hrr">
+                            <connections>
+                                <segue destination="BZ1-aJ-TMi" kind="modal" id="btu-tW-nhZ"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="Tae-3h-qZL">
                             <connections>
                                 <action selector="refreshRooms:" destination="faS-jp-dgd" id="Sl8-1J-nuQ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="setting" destination="lJP-9X-Hrr" id="xMT-Ib-T9O"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3s3-sX-sPj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -251,7 +259,7 @@
                     <navigationItem key="navigationItem" title="Settings" id="4Vk-b9-MLG">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="CX5-Bl-LjM">
                             <connections>
-                                <segue destination="0SM-ob-hUw" kind="unwind" unwindAction="unwindToTop:" id="50s-7K-zYR"/>
+                                <action selector="cancel:" destination="z2U-oR-dcF" id="BHz-My-3YZ"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Done" id="1tz-On-p4i">
@@ -351,5 +359,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="5mw-Uc-cFt"/>
+        <segue reference="btu-tW-nhZ"/>
     </inferredMetricsTieBreakers>
 </document>
