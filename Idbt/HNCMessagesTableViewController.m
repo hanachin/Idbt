@@ -10,6 +10,7 @@
 #import "HNCMessagesTableViewConstant.h"
 #import "HNCMessagesTableViewCell.h"
 #import "HNCIdobataMessage.h"
+#import "HNCPostNavigationController.h"
 
 @interface HNCMessagesTableViewController ()
 
@@ -101,15 +102,19 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    if ([[segue identifier] isEqualToString:@"post to room"]) {
+        HNCPostNavigationController *controller = (HNCPostNavigationController *)segue.destinationViewController;
+        controller.roomId = self.roomId;
+    }
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
+
 
 @end

@@ -11,5 +11,6 @@
 @interface HNCMessagesTableViewController : UITableViewController
 
 @property (nonatomic, strong) NSMutableArray *messages;
+@property (nonatomic) NSUInteger roomId;
 
 @end

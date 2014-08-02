@@ -139,7 +139,7 @@
                     <navigationItem key="navigationItem" id="q4y-s9-RCB">
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="tvv-ld-MOZ">
                             <connections>
-                                <segue destination="fok-PD-UGm" kind="modal" id="07V-5c-zzL"/>
+                                <segue destination="fok-PD-UGm" kind="modal" identifier="post to room" id="07V-5c-zzL"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -325,10 +325,10 @@
             </objects>
             <point key="canvasLocation" x="78" y="785"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Post Navigation Controller-->
         <scene sceneID="GmK-0q-p3s">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fok-PD-UGm" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fok-PD-UGm" customClass="HNCPostNavigationController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="e0B-yC-JnA">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

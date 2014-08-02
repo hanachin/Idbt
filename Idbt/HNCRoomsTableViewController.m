@@ -145,7 +145,9 @@
         HNCRoomsTableViewCell *cell = (HNCRoomsTableViewCell*)[self.tableView cellForRowAtIndexPath:[self.tableView indexPathForSelectedRow]];
         NSLog(@"%@", cell.room.name);
         HNCMessagesTableViewController *controller = (HNCMessagesTableViewController *)segue.destinationViewController;
-        [[HNCIdobataClient defaultClient] roomMessages: cell.room.roomId completeHandler:^(NSArray *messages, NSURLResponse *response, NSError *error) {
+        NSUInteger roomId = cell.room.roomId;
+        [[HNCIdobataClient defaultClient] roomMessages: roomId completeHandler:^(NSArray *messages, NSURLResponse *response, NSError *error) {
+            controller.roomId = roomId;
             [controller.messages addObjectsFromArray: messages];
             [controller.tableView reloadData];
         }];
