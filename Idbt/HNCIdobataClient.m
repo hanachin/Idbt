@@ -8,6 +8,7 @@
 
 #import "HNCIdobataClient.h"
 #import "../Pods/UICKeyChainStore/Lib/UICKeyChainStore.h"
+#import "../Pods/Underscore.m/Underscore/Underscore.h"
 #import "../Pods/Underscore.m/Underscore/Underscore+Functional.h"
 
 @implementation HNCIdobataClient
@@ -68,6 +69,8 @@
                 NSArray *messages = Underscore.array([NSJSONSerialization JSONObjectWithData: data options:0 error:nil][@"messages"])
                 .map(^HNCIdobataMessage *(NSDictionary *dict) {
                     return [HNCIdobataMessage idobataMessageWithDictionary: dict];
+                }).sort(^(HNCIdobataMessage *a, HNCIdobataMessage *b) {
+                    return [b.createdAt compare: a.createdAt];
                 }).unwrap;
                 completionHandler(messages, response, error);
             } else {

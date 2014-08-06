@@ -17,7 +17,7 @@
 @property (nonatomic, strong) NSArray *imageUrls;
 @property (nonatomic, strong) NSArray *mentions;
 // TODO: returnDatetime
-@property (nonatomic, strong) NSString *createdAt;
+@property (nonatomic, strong) NSDate *createdAt;
 @property (nonatomic) NSInteger roomId;
 // TODO: wrap it to sender class
 @property (nonatomic, strong) NSString *senderType;

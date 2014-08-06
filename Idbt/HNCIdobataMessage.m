@@ -24,7 +24,15 @@
         self.body = self.message[@"body"];
         self.imageUrls = self.message[@"image_urls"];
         self.mentions = self.message[@"mentions"];
-        self.createdAt = self.message[@"created_at"];
+
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
+        dateFormatter.locale = locale;
+        dateFormatter.dateFormat = @"yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'SSS'Z'";
+        dateFormatter.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
+        self.createdAt = [dateFormatter dateFromString: self.message[@"created_at"]];
+        NSLog(@"%@ %@", self.createdAt, self.message[@"created_at"]);
+
         self.roomId = [self.message[@"room_id"] integerValue];
         self.senderType = self.message[@"sender_type"];
         self.senderId = [self.message[@"sender_id"] integerValue];
