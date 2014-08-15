@@ -11,7 +11,6 @@
 
 @interface HNCMessagesTableViewCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UIImageView *icon;
 @property (weak, nonatomic) IBOutlet UILabel *username;
 @property (weak, nonatomic) IBOutlet UILabel *message;
 
