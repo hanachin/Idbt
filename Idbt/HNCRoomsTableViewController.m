@@ -177,7 +177,7 @@
 - (NSArray *)filteredRooms
 {
     if (!self.filterUnread) {
-        return self.rooms.rooms;
+        return self.rooms.allRooms;
     }
     return self.rooms.unreadRooms;
 }

@@ -15,7 +15,7 @@
 {
     self = [super init];
     if (self) {
-        self.rooms = Underscore.array(rooms).sort(^(HNCIdobataRoom *a, HNCIdobataRoom *b) {
+        self.allRooms = Underscore.array(rooms).sort(^(HNCIdobataRoom *a, HNCIdobataRoom *b) {
             return [a.name compare: b.name];
         }).unwrap;
     }
@@ -24,7 +24,7 @@
 
 - (NSArray *)unreadRooms
 {
-    return Underscore.array(self.rooms)
+    return Underscore.array(self.allRooms)
     .reject(^BOOL (HNCIdobataRoom *room) {
         return room.unreadMessageIds.count == 0;
     }).unwrap;
