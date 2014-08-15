@@ -137,21 +137,21 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="01234567890123456789" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cpI-UP-VKN">
-                                            <rect key="frame" x="51" y="0.0" width="259" height="14"/>
+                                            <rect key="frame" x="52" y="0.0" width="258" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="2014/8/31" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7X-SA-kqo">
-                                            <rect key="frame" x="51" y="0.0" width="259" height="14"/>
+                                            <rect key="frame" x="52" y="0.0" width="258" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="hi" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="259" translatesAutoresizingMaskIntoConstraints="NO" id="q4u-O2-3qh">
-                                            <rect key="frame" x="51" y="20" width="259" height="20"/>
+                                        <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="hi" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="258" translatesAutoresizingMaskIntoConstraints="NO" id="q4u-O2-3qh">
+                                            <rect key="frame" x="52" y="20" width="258" height="20"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             <nil key="highlightedColor"/>
@@ -173,9 +173,9 @@
                                         <constraint firstAttribute="trailing" secondItem="cpI-UP-VKN" secondAttribute="trailing" constant="10" id="b1f-pU-SWO"/>
                                         <constraint firstAttribute="bottom" secondItem="q4u-O2-3qh" secondAttribute="bottom" constant="3" id="h8K-0v-M0T"/>
                                         <constraint firstItem="cpI-UP-VKN" firstAttribute="top" secondItem="Vw7-eZ-uiX" secondAttribute="top" id="hFu-TI-HOD"/>
-                                        <constraint firstItem="q4u-O2-3qh" firstAttribute="leading" secondItem="Vw7-eZ-uiX" secondAttribute="leading" constant="51" id="iX8-Qv-4X4"/>
-                                        <constraint firstItem="p7X-SA-kqo" firstAttribute="leading" secondItem="Vw7-eZ-uiX" secondAttribute="leading" constant="51" id="k4r-TW-JLi"/>
-                                        <constraint firstItem="cpI-UP-VKN" firstAttribute="leading" secondItem="Vw7-eZ-uiX" secondAttribute="leading" constant="51" id="mp7-Lo-sna"/>
+                                        <constraint firstItem="q4u-O2-3qh" firstAttribute="leading" secondItem="Vw7-eZ-uiX" secondAttribute="leading" constant="52" id="iX8-Qv-4X4"/>
+                                        <constraint firstItem="p7X-SA-kqo" firstAttribute="leading" secondItem="Vw7-eZ-uiX" secondAttribute="leading" constant="52" id="k4r-TW-JLi"/>
+                                        <constraint firstItem="cpI-UP-VKN" firstAttribute="leading" secondItem="Vw7-eZ-uiX" secondAttribute="leading" constant="52" id="mp7-Lo-sna"/>
                                         <constraint firstItem="p7X-SA-kqo" firstAttribute="top" secondItem="Vw7-eZ-uiX" secondAttribute="top" id="nZx-gw-Zgy"/>
                                         <constraint firstItem="q4u-O2-3qh" firstAttribute="top" secondItem="Vw7-eZ-uiX" secondAttribute="top" constant="20" id="pvm-lR-2Fo"/>
                                     </constraints>
