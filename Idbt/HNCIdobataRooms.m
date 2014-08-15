@@ -30,5 +30,24 @@
     }).unwrap;
 }
 
+- (NSArray *)organizationRooms:(NSUInteger)organizationId
+{
+    return Underscore.array(self.allRooms).reject(^BOOL (HNCIdobataRoom *room) {
+        return room.organizationId != organizationId;
+    }).unwrap;
+}
+
+- (NSArray *)organizationRooms:(NSUInteger)organizationId unread:(BOOL)unread
+{
+    if (unread) {
+        return Underscore.array(self.unreadRooms).reject(^BOOL (HNCIdobataRoom *room) {
+            return room.organizationId != organizationId;
+        }).unwrap;
+    } else {
+        return Underscore.array(self.allRooms).reject(^BOOL (HNCIdobataRoom *room) {
+            return room.organizationId != organizationId;
+        }).unwrap;
+    }
+}
 
 @end
