@@ -60,13 +60,13 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     NSInteger organizationId = [[self.seed.organizations objectAtIndex:section][@"id"] integerValue];
-    return [self.rooms organizationRooms:organizationId].count;
+    return [self.rooms organizationRooms:organizationId].all.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSInteger organizationId = [[self.seed.organizations objectAtIndex:indexPath.section][@"id"] integerValue];
-    NSArray *rooms = [self.rooms organizationRooms:organizationId];
+    NSArray *rooms = [self.rooms organizationRooms:organizationId].all;
 
     HNCRoomsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:HNCRoomsTableViewCellIdentifier forIndexPath:indexPath];
     [cell setupWithRoom: [rooms objectAtIndex:indexPath.row]];
@@ -171,7 +171,7 @@
     if (!self.filterUnread) {
         return self.rooms.all;
     }
-    return self.rooms.unreadRooms;
+    return self.rooms.unreadRooms.all;
 }
 
 @end

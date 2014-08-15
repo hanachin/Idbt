@@ -14,7 +14,7 @@
 
 - (HNCIdobataRooms *)initWithRooms:(NSArray *)rooms;
 
-- (NSArray *)unreadRooms;
-- (NSArray *)organizationRooms:(NSUInteger)organizationId;
+- (HNCIdobataRooms *)unreadRooms;
+- (HNCIdobataRooms *)organizationRooms:(NSUInteger)organizationId;
 
 @end

@@ -22,19 +22,21 @@
     return self;
 }
 
-- (NSArray *)unreadRooms
+- (HNCIdobataRooms *)unreadRooms
 {
-    return Underscore.array(self.all)
+    NSArray *rooms = Underscore.array(self.all)
     .reject(^BOOL (HNCIdobataRoom *room) {
         return room.unreadMessageIds.count == 0;
     }).unwrap;
+    return [[HNCIdobataRooms alloc] initWithRooms:rooms];
 }
 
-- (NSArray *)organizationRooms:(NSUInteger)organizationId
+- (HNCIdobataRooms *)organizationRooms:(NSUInteger)organizationId
 {
-    return Underscore.array(self.all).reject(^BOOL (HNCIdobataRoom *room) {
+    NSArray *rooms = Underscore.array(self.all).reject(^BOOL (HNCIdobataRoom *room) {
         return room.organizationId != organizationId;
     }).unwrap;
+    return [[HNCIdobataRooms alloc] initWithRooms:rooms];
 }
 
 @end
