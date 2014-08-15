@@ -51,6 +51,7 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return self.seed.organizations.count;
+
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
@@ -61,7 +62,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     NSInteger organizationId = [[self.seed.organizations objectAtIndex:section][@"id"] integerValue];
-    return Underscore.array(self.rooms)
+    return Underscore.array([self filteredRooms])
     .reject(^BOOL (HNCIdobataRoom *room) {
         return room.organizationId != organizationId;
     }).unwrap.count;
@@ -70,7 +71,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSInteger organizationId = [[self.seed.organizations objectAtIndex:indexPath.section][@"id"] integerValue];
-    NSArray *rooms = Underscore.array(self.rooms)
+    NSArray *rooms = Underscore.array([self filteredRooms])
     .reject(^BOOL (HNCIdobataRoom *room) {
         return room.organizationId != organizationId;
     }).sort(^(HNCIdobataRoom *a, HNCIdobataRoom *b) {
@@ -153,6 +154,7 @@
     } else {
         self.filterUnread = YES;
     }
+    [self.tableView reloadData];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -172,6 +174,20 @@
     }
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+}
+
+- (NSArray *)filteredRooms
+{
+    if (!self.filterUnread) {
+        return self.rooms;
+    }
+
+    return Underscore.array(self.rooms)
+    .reject(^BOOL (HNCIdobataRoom *room) {
+        return room.unreadMessageIds.count == 0;
+    }).sort(^(HNCIdobataRoom *a, HNCIdobataRoom *b) {
+        return [a.name compare: b.name];
+    }).unwrap;
 }
 
 @end
