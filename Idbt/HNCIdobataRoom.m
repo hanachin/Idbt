@@ -26,7 +26,7 @@
         self.organizationId = [dictionary[@"organization_id"] integerValue];
         self.partial = dictionary[@"partial"];
         self.unreadMentionIds = dictionary[@"unread_mention_ids"];
-        self.unreadMessageIds = dictionary[@"unread_messages_ids"];
+        self.unreadMessageIds = dictionary[@"unread_message_ids"];
     }
     return self;
 }
