@@ -173,6 +173,8 @@
         return Underscore.array(self.seed.organizations).find(^BOOL (NSDictionary *organization) {
             return [organization[@"id"] unsignedIntegerValue] == [organizationId unsignedIntegerValue];
         });
+    }).sort(^(NSDictionary *a, NSDictionary *b) {
+        return [a[@"name"] compare: b[@"name"]];
     }).unwrap;
 }
 
