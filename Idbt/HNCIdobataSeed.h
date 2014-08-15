@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "HNCIdobataRooms.h"
 
 @interface HNCIdobataSeed : NSObject
 
@@ -18,7 +19,7 @@
 - (HNCIdobataSeed *)initWithData:(NSData *)data;
 - (NSArray *)organizations;
 - (NSDictionary *)user;
-- (NSArray *)rooms;
+- (HNCIdobataRooms *)rooms;
 - (NSInteger)version;
 
 @end

@@ -179,15 +179,9 @@
 - (NSArray *)filteredRooms
 {
     if (!self.filterUnread) {
-        return self.rooms;
+        return self.rooms.rooms;
     }
-
-    return Underscore.array(self.rooms)
-    .reject(^BOOL (HNCIdobataRoom *room) {
-        return room.unreadMessageIds.count == 0;
-    }).sort(^(HNCIdobataRoom *a, HNCIdobataRoom *b) {
-        return [a.name compare: b.name];
-    }).unwrap;
+    return self.rooms.unreadRooms;
 }
 
 @end

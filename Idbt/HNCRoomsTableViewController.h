@@ -14,7 +14,7 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *setting;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *filterSegment;
 @property (nonatomic, strong) HNCIdobataSeed *seed;
-@property (nonatomic, strong) NSArray *rooms;
+@property (nonatomic, strong) HNCIdobataRooms *rooms;
 @property BOOL filterUnread;
 
 

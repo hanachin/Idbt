@@ -31,12 +31,13 @@
     return self.seed[@"records"][@"organizations"];
 }
 
-- (NSArray *)rooms
+- (HNCIdobataRooms *)rooms
 {
-    return Underscore.array(self.seed[@"records"][@"rooms"])
+    NSArray *rooms = Underscore.array(self.seed[@"records"][@"rooms"])
     .map(^HNCIdobataRoom *(NSDictionary *room) {
         return [[HNCIdobataRoom alloc] initWithDictionary: room];
     }).unwrap;
+    return [[HNCIdobataRooms alloc] initWithRooms:rooms];
 }
 
 - (NSDictionary *)user
