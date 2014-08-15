@@ -60,13 +60,13 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     NSInteger organizationId = [[self.filteredOrganizations objectAtIndex:section][@"id"] integerValue];
-    return [self.rooms organizationRooms:organizationId].all.count;
+    return [self.filteredRooms organizationRooms:organizationId].all.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSInteger organizationId = [[self.filteredOrganizations objectAtIndex:indexPath.section][@"id"] integerValue];
-    NSArray *rooms = [self.rooms organizationRooms:organizationId].all;
+    NSArray *rooms = [self.filteredRooms organizationRooms:organizationId].all;
 
     HNCRoomsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:HNCRoomsTableViewCellIdentifier forIndexPath:indexPath];
     [cell setupWithRoom: [rooms objectAtIndex:indexPath.row]];
@@ -168,19 +168,20 @@
 
 - (NSArray *)filteredOrganizations
 {
-    return Underscore.array(self.rooms.organizationIds).map(^NSDictionary *(NSNumber *organizationId) {
+    NSArray *rooms = self.filteredRooms.organizationIds;
+    return Underscore.array(rooms).map(^NSDictionary *(NSNumber *organizationId) {
         return Underscore.array(self.seed.organizations).find(^BOOL (NSDictionary *organization) {
             return [organization[@"id"] unsignedIntegerValue] == [organizationId unsignedIntegerValue];
         });
     }).unwrap;
 }
 
-- (NSArray *)filteredRooms
+- (HNCIdobataRooms *)filteredRooms
 {
     if (!self.filterUnread) {
-        return self.rooms.all;
+        return self.rooms;
     }
-    return self.rooms.unreadRooms.all;
+    return self.rooms.unreadRooms;
 }
 
 @end
