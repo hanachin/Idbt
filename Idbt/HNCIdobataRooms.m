@@ -39,4 +39,11 @@
     return [[HNCIdobataRooms alloc] initWithRooms:rooms];
 }
 
+- (NSArray *)organizationIds
+{
+    return Underscore.array(self.all).map(^NSNumber *(HNCIdobataRoom *room) {
+        return [NSNumber numberWithUnsignedInteger: room.organizationId];
+    }).uniq.unwrap;
+}
+
 @end
