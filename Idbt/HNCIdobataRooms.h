@@ -10,7 +10,7 @@
 
 @interface HNCIdobataRooms : NSObject
 
-@property (nonatomic, strong) NSArray *allRooms;
+@property (nonatomic, strong) NSArray *all;
 
 - (HNCIdobataRooms *)initWithRooms:(NSArray *)rooms;
 

@@ -15,7 +15,7 @@
 {
     self = [super init];
     if (self) {
-        self.allRooms = Underscore.array(rooms).sort(^(HNCIdobataRoom *a, HNCIdobataRoom *b) {
+        self.all = Underscore.array(rooms).sort(^(HNCIdobataRoom *a, HNCIdobataRoom *b) {
             return [a.name compare: b.name];
         }).unwrap;
     }
@@ -24,7 +24,7 @@
 
 - (NSArray *)unreadRooms
 {
-    return Underscore.array(self.allRooms)
+    return Underscore.array(self.all)
     .reject(^BOOL (HNCIdobataRoom *room) {
         return room.unreadMessageIds.count == 0;
     }).unwrap;
@@ -32,7 +32,7 @@
 
 - (NSArray *)organizationRooms:(NSUInteger)organizationId
 {
-    return Underscore.array(self.allRooms).reject(^BOOL (HNCIdobataRoom *room) {
+    return Underscore.array(self.all).reject(^BOOL (HNCIdobataRoom *room) {
         return room.organizationId != organizationId;
     }).unwrap;
 }
@@ -44,7 +44,7 @@
             return room.organizationId != organizationId;
         }).unwrap;
     } else {
-        return Underscore.array(self.allRooms).reject(^BOOL (HNCIdobataRoom *room) {
+        return Underscore.array(self.all).reject(^BOOL (HNCIdobataRoom *room) {
             return room.organizationId != organizationId;
         }).unwrap;
     }
