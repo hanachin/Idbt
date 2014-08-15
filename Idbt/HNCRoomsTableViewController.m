@@ -48,24 +48,24 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return self.seed.organizations.count;
+    return self.filteredOrganizations.count;
 
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return [self.seed.organizations objectAtIndex:section][@"name"];
+    return [self.filteredOrganizations objectAtIndex:section][@"name"];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSInteger organizationId = [[self.seed.organizations objectAtIndex:section][@"id"] integerValue];
+    NSInteger organizationId = [[self.filteredOrganizations objectAtIndex:section][@"id"] integerValue];
     return [self.rooms organizationRooms:organizationId].all.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSInteger organizationId = [[self.seed.organizations objectAtIndex:indexPath.section][@"id"] integerValue];
+    NSInteger organizationId = [[self.filteredOrganizations objectAtIndex:indexPath.section][@"id"] integerValue];
     NSArray *rooms = [self.rooms organizationRooms:organizationId].all;
 
     HNCRoomsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:HNCRoomsTableViewCellIdentifier forIndexPath:indexPath];
@@ -164,6 +164,15 @@
     }
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+}
+
+- (NSArray *)filteredOrganizations
+{
+    return Underscore.array(self.rooms.organizationIds).map(^NSDictionary *(NSNumber *organizationId) {
+        return Underscore.array(self.seed.organizations).find(^BOOL (NSDictionary *organization) {
+            return [organization[@"id"] unsignedIntegerValue] == [organizationId unsignedIntegerValue];
+        });
+    }).unwrap;
 }
 
 - (NSArray *)filteredRooms
