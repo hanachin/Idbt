@@ -68,6 +68,8 @@
     NSArray *rooms = Underscore.array(self.rooms)
     .reject(^BOOL (HNCIdobataRoom *room) {
         return room.organizationId != organizationId;
+    }).sort(^(HNCIdobataRoom *a, HNCIdobataRoom *b) {
+        return [a.name compare: b.name];
     }).unwrap;
 
     HNCRoomsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:HNCRoomsTableViewCellIdentifier forIndexPath:indexPath];
