@@ -7,6 +7,7 @@
 //
 
 #import "HNCIdobataRooms.h"
+#import "HNCIdobataRoom.h"
 
 @implementation HNCIdobataRooms
 
@@ -14,9 +15,20 @@
 {
     self = [super init];
     if (self) {
-        self.rooms = rooms;
+        self.rooms = Underscore.array(rooms).sort(^(HNCIdobataRoom *a, HNCIdobataRoom *b) {
+            return [a.name compare: b.name];
+        }).unwrap;
     }
     return self;
 }
+
+- (NSArray *)unreadRooms
+{
+    return Underscore.array(self.rooms)
+    .reject(^BOOL (HNCIdobataRoom *room) {
+        return room.unreadMessageIds.count == 0;
+    }).unwrap;
+}
+
 
 @end
