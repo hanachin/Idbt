@@ -148,8 +148,9 @@
         NSLog(@"%@", cell.room.name);
         HNCMessagesTableViewController *controller = (HNCMessagesTableViewController *)segue.destinationViewController;
         NSUInteger roomId = cell.room.roomId;
+        controller.roomId = roomId;
+        [controller setTitle: cell.room.name];
         [[HNCIdobataClient defaultClient] roomMessages: roomId completeHandler:^(NSArray *messages, NSURLResponse *response, NSError *error) {
-            controller.roomId = roomId;
             [controller.messages addObjectsFromArray: messages];
             [controller.tableView reloadData];
         }];
