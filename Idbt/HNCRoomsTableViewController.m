@@ -29,8 +29,6 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    // UINib *roomsTableCellNib = [UINib nibWithNibName:HNCRoomsTableViewCellIdentifier bundle:nil];
-    // [self.tableView registerNib:roomsTableCellNib forCellReuseIdentifier:HNCRoomsTableViewCellIdentifier];
     FAKFontAwesome *settingIcon = [FAKFontAwesome gearIconWithSize: 28.0];
     self.setting.image = [settingIcon imageWithSize: CGSizeMake(28.0, 28.0)];
     FAKIonIcons *chatbubbleIcon = [FAKIonIcons chatbubbleIconWithSize:24.0];
