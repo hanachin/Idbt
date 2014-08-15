@@ -63,6 +63,7 @@
     HNCMessagesTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:HNCMessagesTableViewCellIdentifier forIndexPath:indexPath];
     HNCIdobataMessage *message = [self.messages objectAtIndex:indexPath.row];
     [cell setupWithMessage:message];
+    NSLog(@"width: %lf", cell.message.frame.size.width);
     return cell;
 }
 
@@ -114,5 +115,24 @@
     // Pass the selected object to the new view controller.
 }
 
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    int headingSpace = 52;
+    int trailingSpace = 10;
+    int textWidth = self.tableView.frame.size.width - headingSpace - trailingSpace;
+
+    HNCIdobataMessage *message = self.messages[indexPath.row];
+    CGSize boundingRect = CGSizeMake(textWidth, CGFLOAT_MAX);
+
+    CGSize bodySize = [message.attributedString boundingRectWithSize: boundingRect
+                                                 options: (NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading)
+                                                 context: nil
+                          ].size;
+    int topSpace = 20;
+    int padding = 10;
+    int rowHeight = 44;
+    return MAX(bodySize.height + topSpace + padding, rowHeight);
+}
 
 @end
