@@ -33,6 +33,11 @@
     // [self.tableView registerNib:roomsTableCellNib forCellReuseIdentifier:HNCRoomsTableViewCellIdentifier];
     FAKFontAwesome *settingIcon = [FAKFontAwesome gearIconWithSize: 28.0];
     self.setting.image = [settingIcon imageWithSize: CGSizeMake(28.0, 28.0)];
+    FAKIonIcons *chatbubbleIcon = [FAKIonIcons chatbubbleIconWithSize:24.0];
+    self.filterUnread = NO;
+    [self.filterSegment setImage:[chatbubbleIcon imageWithSize:CGSizeMake(24.0, 24.0)] forSegmentAtIndex:0];
+    FAKIonIcons *chatbubbleWorkingIcon = [FAKIonIcons chatbubbleWorkingIconWithSize:24.0];
+    [self.filterSegment setImage:[chatbubbleWorkingIcon imageWithSize:CGSizeMake(24.0, 24.0)] forSegmentAtIndex:1];
 }
 
 - (void)didReceiveMemoryWarning
@@ -140,6 +145,14 @@
         NSLog(@"%@", seed);
         [self.tableView reloadData];
     }];
+}
+
+- (IBAction)toggleFilter:(id)sender {
+    if ([self.filterSegment selectedSegmentIndex] == 0) {
+        self.filterUnread = NO;
+    } else {
+        self.filterUnread = YES;
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

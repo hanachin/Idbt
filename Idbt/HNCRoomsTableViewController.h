@@ -12,9 +12,13 @@
 @interface HNCRoomsTableViewController : UITableViewController
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *setting;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *filterSegment;
 @property (nonatomic, strong) HNCIdobataSeed *seed;
 @property (nonatomic, strong) NSArray *rooms;
+@property BOOL filterUnread;
+
 
 - (IBAction)refreshRooms:(id)sender;
+- (IBAction)toggleFilter:(id)sender;
 
 @end

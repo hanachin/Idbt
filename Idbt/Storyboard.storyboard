@@ -47,11 +47,23 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="uo7-ec-WfY">
+                        <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" id="lJP-9X-Hrr">
                             <connections>
                                 <segue destination="BZ1-aJ-TMi" kind="modal" id="btu-tW-nhZ"/>
                             </connections>
                         </barButtonItem>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="WbU-0t-kqP">
+                            <rect key="frame" x="96" y="7" width="128" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="all"/>
+                                <segment title="unread"/>
+                            </segments>
+                            <connections>
+                                <action selector="toggleFilter:" destination="faS-jp-dgd" eventType="valueChanged" id="76p-bQ-8Gt"/>
+                            </connections>
+                        </segmentedControl>
                         <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="Tae-3h-qZL">
                             <connections>
                                 <action selector="refreshRooms:" destination="faS-jp-dgd" id="Sl8-1J-nuQ"/>
@@ -59,6 +71,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="filterSegment" destination="WbU-0t-kqP" id="bly-oT-fut"/>
                         <outlet property="setting" destination="lJP-9X-Hrr" id="xMT-Ib-T9O"/>
                     </connections>
                 </tableViewController>
