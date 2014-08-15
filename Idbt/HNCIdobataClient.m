@@ -49,7 +49,7 @@
 }
 - (void)roomMessages:(NSInteger)roomId completeHandler:(void (^)(NSArray *messages, NSURLResponse *response, NSError *error))completionHandler
 {
-    NSString *urlString = [NSString stringWithFormat:@"%@?room_id=%ld", @"https://idobata.io/api/messages", roomId];
+    NSString *urlString = [NSString stringWithFormat:@"%@?room_id=%ld", @"https://idobata.io/api/messages", (long)roomId];
     NSLog(@"%@", urlString);
     NSURL *url = [NSURL URLWithString: urlString];
     [self messages:url completeHandler:completionHandler];
