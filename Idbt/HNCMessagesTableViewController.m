@@ -63,7 +63,6 @@
     HNCMessagesTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:HNCMessagesTableViewCellIdentifier forIndexPath:indexPath];
     HNCIdobataMessage *message = [self.messages objectAtIndex:indexPath.row];
     [cell setupWithMessage:message];
-    NSLog(@"width: %lf", cell.message.frame.size.width);
     return cell;
 }
 
