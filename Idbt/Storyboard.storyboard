@@ -13,7 +13,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HNCRoomsTableViewCell" textLabel="p9Y-7D-ahV" style="IBUITableViewCellStyleDefault" id="mxd-L2-wfa" customClass="HNCRoomsTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HNCRoomsTableViewCell" textLabel="p9Y-7D-ahV" detailTextLabel="m3i-dO-xAR" style="IBUITableViewCellStyleValue1" id="mxd-L2-wfa" customClass="HNCRoomsTableViewCell">
                                 <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mxd-L2-wfa" id="wJY-D1-3mr">
@@ -21,10 +21,17 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="hi" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="p9Y-7D-ahV">
-                                            <rect key="frame" x="15" y="0.0" width="270" height="43"/>
+                                            <rect key="frame" x="15" y="11" width="14" height="21"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="m3i-dO-xAR">
+                                            <rect key="frame" x="241" y="11" width="44" height="21"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -76,21 +83,21 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="01234567890123456789" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cpI-UP-VKN">
+                                        <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01234567890123456789" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cpI-UP-VKN">
                                             <rect key="frame" x="52" y="0.0" width="258" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="2014/8/31" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7X-SA-kqo">
+                                        <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2014/8/31" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7X-SA-kqo">
                                             <rect key="frame" x="52" y="0.0" width="258" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="hi" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="258" translatesAutoresizingMaskIntoConstraints="NO" id="q4u-O2-3qh">
+                                        <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hi" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="258" translatesAutoresizingMaskIntoConstraints="NO" id="q4u-O2-3qh">
                                             <rect key="frame" x="52" y="20" width="258" height="20"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
@@ -158,7 +165,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textView appearanceType="aqua" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" bounces="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vn4-l7-RMf">
+                            <textView appearanceType="aqua" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vn4-l7-RMf">
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>

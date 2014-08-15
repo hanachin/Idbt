@@ -27,6 +27,14 @@
 {
     self.room = room;
     self.textLabel.text = room.name;
+    if (room.unreadMessageIds.count == 0) {
+        self.detailTextLabel.text = @"";
+    } else {
+        self.detailTextLabel.text = [NSString stringWithFormat:@"%ld", (long)room.unreadMessageIds.count];
+        if (room.unreadMentionIds.count > 0) {
+            self.detailTextLabel.textColor = [UIColor blueColor];
+        }
+    }
 }
 
 @end
