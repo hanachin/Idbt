@@ -37,8 +37,6 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    UINib *messagesTableCellNib = [UINib nibWithNibName:HNCMessagesTableViewCellIdentifier bundle:nil];
-    [self.tableView registerNib:messagesTableCellNib forCellReuseIdentifier:HNCMessagesTableViewCellIdentifier];
     self.messages =[NSMutableArray array];
 }
 

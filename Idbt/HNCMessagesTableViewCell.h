@@ -12,7 +12,9 @@
 @interface HNCMessagesTableViewCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *username;
+@property (weak, nonatomic) IBOutlet UILabel *datetime;
 @property (weak, nonatomic) IBOutlet UILabel *message;
+@property (weak, nonatomic) IBOutlet UIImageView *icon;
 
 + (CGFloat)rowHeight;
 - (void)setupWithMessage:(HNCIdobataMessage *)message;

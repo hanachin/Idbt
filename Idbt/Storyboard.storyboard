@@ -129,21 +129,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="HNCMessagesTableViewCell" id="sU0-9D-bCg" customClass="HNCMessagesTableViewCell">
+                            <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="HNCMessagesTableViewCell" id="sU0-9D-bCg" customClass="HNCMessagesTableViewCell">
                                 <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sU0-9D-bCg" id="Vw7-eZ-uiX">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView appearanceType="aqua" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bHv-F3-RBq">
-                                            <rect key="frame" x="0.0" y="0.0" width="43" height="43"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="43" id="R3u-cK-1KQ"/>
-                                                <constraint firstAttribute="height" constant="43" id="eca-tW-bVg"/>
-                                            </constraints>
-                                        </imageView>
                                         <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="01234567890123456789" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cpI-UP-VKN">
                                             <rect key="frame" x="51" y="0.0" width="259" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -164,12 +156,20 @@
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView appearanceType="aqua" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xa4-rp-Gwj">
+                                            <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="44" id="5oZ-TG-cXF"/>
+                                                <constraint firstAttribute="width" constant="44" id="HXA-3j-mjw"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="bHv-F3-RBq" firstAttribute="leading" secondItem="Vw7-eZ-uiX" secondAttribute="leading" id="2HC-JI-WI0"/>
                                         <constraint firstAttribute="trailing" secondItem="p7X-SA-kqo" secondAttribute="trailing" constant="10" id="37h-Ww-Mym"/>
-                                        <constraint firstItem="bHv-F3-RBq" firstAttribute="top" secondItem="Vw7-eZ-uiX" secondAttribute="top" id="DEG-SP-VjC"/>
+                                        <constraint firstItem="Xa4-rp-Gwj" firstAttribute="top" secondItem="Vw7-eZ-uiX" secondAttribute="top" id="396-Bs-Mxa"/>
                                         <constraint firstAttribute="trailing" secondItem="q4u-O2-3qh" secondAttribute="trailing" constant="10" id="Lge-un-45f"/>
+                                        <constraint firstItem="Xa4-rp-Gwj" firstAttribute="leading" secondItem="Vw7-eZ-uiX" secondAttribute="leading" id="ZoZ-mZ-AuD"/>
                                         <constraint firstAttribute="trailing" secondItem="cpI-UP-VKN" secondAttribute="trailing" constant="10" id="b1f-pU-SWO"/>
                                         <constraint firstAttribute="bottom" secondItem="q4u-O2-3qh" secondAttribute="bottom" constant="3" id="h8K-0v-M0T"/>
                                         <constraint firstItem="cpI-UP-VKN" firstAttribute="top" secondItem="Vw7-eZ-uiX" secondAttribute="top" id="hFu-TI-HOD"/>
@@ -182,8 +182,10 @@
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
-                                    <outlet property="message" destination="q4u-O2-3qh" id="c1T-dV-QUI"/>
-                                    <outlet property="username" destination="p7X-SA-kqo" id="bRV-Z3-bSp"/>
+                                    <outlet property="datetime" destination="p7X-SA-kqo" id="eev-GR-NwF"/>
+                                    <outlet property="icon" destination="Xa4-rp-Gwj" id="a8E-ka-Owp"/>
+                                    <outlet property="message" destination="q4u-O2-3qh" id="AIr-vS-FzJ"/>
+                                    <outlet property="username" destination="cpI-UP-VKN" id="09h-7R-Ulr"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
