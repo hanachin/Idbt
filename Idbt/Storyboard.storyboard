@@ -4,66 +4,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--Top View Controller - Timeline-->
-        <scene sceneID="a8w-CO-BCT">
-            <objects>
-                <viewController id="nzp-lo-Nh7" customClass="HNCTopViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="sKH-0v-eEr"/>
-                        <viewControllerLayoutGuide type="bottom" id="4Q2-Gx-bcK"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="AOH-cf-8Mz">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r1i-E3-L5S">
-                                <rect key="frame" x="243" y="518" width="57" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Settings">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="BZ1-aJ-TMi" kind="modal" id="3VM-V4-htx"/>
-                                </connections>
-                            </button>
-                            <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dwd-SZ-dv8">
-                                <rect key="frame" x="123" y="518" width="75" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Hi, idobata">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="hi:" destination="nzp-lo-Nh7" eventType="touchUpInside" id="bQa-OW-EVy"/>
-                                </connections>
-                            </button>
-                            <containerView appearanceType="aqua" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fx7-Vc-9as">
-                                <rect key="frame" x="0.0" y="64" width="320" height="446"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <connections>
-                                    <segue destination="U1W-zn-3gi" kind="embed" id="B4F-dX-eCE"/>
-                                </connections>
-                            </containerView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="fx7-Vc-9as" secondAttribute="trailing" id="5mO-7i-CLg"/>
-                            <constraint firstAttribute="trailing" secondItem="r1i-E3-L5S" secondAttribute="trailing" constant="20" id="6nh-4M-Aj1"/>
-                            <constraint firstItem="fx7-Vc-9as" firstAttribute="leading" secondItem="AOH-cf-8Mz" secondAttribute="leading" id="9Wg-Ny-lbg"/>
-                            <constraint firstItem="Dwd-SZ-dv8" firstAttribute="top" secondItem="fx7-Vc-9as" secondAttribute="bottom" constant="8" id="RSy-fE-gty"/>
-                            <constraint firstAttribute="trailing" secondItem="Dwd-SZ-dv8" secondAttribute="trailing" constant="122" id="Wh1-uR-QAo"/>
-                            <constraint firstItem="Dwd-SZ-dv8" firstAttribute="leading" secondItem="AOH-cf-8Mz" secondAttribute="leading" constant="123" id="aki-i0-avT"/>
-                            <constraint firstItem="4Q2-Gx-bcK" firstAttribute="top" secondItem="r1i-E3-L5S" secondAttribute="bottom" constant="20" id="gXF-Gu-YgJ"/>
-                            <constraint firstItem="fx7-Vc-9as" firstAttribute="top" secondItem="sKH-0v-eEr" secondAttribute="bottom" id="imn-k9-ww6"/>
-                            <constraint firstItem="4Q2-Gx-bcK" firstAttribute="top" secondItem="Dwd-SZ-dv8" secondAttribute="bottom" constant="20" id="pBz-5n-M7T"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Timeline" id="Kuc-dz-pJ4"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="b9b-3W-4zT" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="469" y="73"/>
-        </scene>
         <!--Rooms Table View Controller-->
         <scene sceneID="wVX-4g-3iQ">
             <objects>
@@ -330,24 +270,6 @@
             <point key="canvasLocation" x="1429" y="73"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="6az-uF-UAN">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3hW-1s-gc3" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7GJ-pM-G37">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="nzp-lo-Nh7" kind="relationship" relationship="rootViewController" id="xrF-R6-Szf"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="d3B-B2-jWN" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="78" y="73"/>
-        </scene>
-        <!--Navigation Controller-->
         <scene sceneID="lWs-Dq-9we">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BZ1-aJ-TMi" sceneMemberID="viewController">
@@ -407,8 +329,4 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="5mw-Uc-cFt"/>
-        <segue reference="btu-tW-nhZ"/>
-    </inferredMetricsTieBreakers>
 </document>
