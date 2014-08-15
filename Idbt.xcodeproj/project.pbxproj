@@ -10,6 +10,7 @@
 		B22009A5198C8D4000C32CBD /* HNCIdobataApp.m in Sources */ = {isa = PBXBuildFile; fileRef = B22009A4198C8D4000C32CBD /* HNCIdobataApp.m */; };
 		B2388F6F198CF45200A3A138 /* HNCPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2388F6E198CF45200A3A138 /* HNCPostViewController.m */; };
 		B2388F75198D054200A3A138 /* HNCPostNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2388F74198D054200A3A138 /* HNCPostNavigationController.m */; };
+		B24C0286199DD3A100BCC770 /* HNCIdbt.m in Sources */ = {isa = PBXBuildFile; fileRef = B24C0285199DD3A100BCC770 /* HNCIdbt.m */; };
 		B2CDCF741983D66A0087F0AF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2CDCF731983D66A0087F0AF /* Foundation.framework */; };
 		B2CDCF761983D66A0087F0AF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2CDCF751983D66A0087F0AF /* CoreGraphics.framework */; };
 		B2CDCF781983D66A0087F0AF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2CDCF771983D66A0087F0AF /* UIKit.framework */; };
@@ -55,6 +56,8 @@
 		B2388F6E198CF45200A3A138 /* HNCPostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNCPostViewController.m; sourceTree = "<group>"; };
 		B2388F73198D054200A3A138 /* HNCPostNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNCPostNavigationController.h; sourceTree = "<group>"; };
 		B2388F74198D054200A3A138 /* HNCPostNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNCPostNavigationController.m; sourceTree = "<group>"; };
+		B24C0284199DD3A100BCC770 /* HNCIdbt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNCIdbt.h; sourceTree = "<group>"; };
+		B24C0285199DD3A100BCC770 /* HNCIdbt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNCIdbt.m; sourceTree = "<group>"; };
 		B2CDCF701983D66A0087F0AF /* Idbt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Idbt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2CDCF731983D66A0087F0AF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B2CDCF751983D66A0087F0AF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -194,6 +197,8 @@
 				B2388F6E198CF45200A3A138 /* HNCPostViewController.m */,
 				B2388F73198D054200A3A138 /* HNCPostNavigationController.h */,
 				B2388F74198D054200A3A138 /* HNCPostNavigationController.m */,
+				B24C0284199DD3A100BCC770 /* HNCIdbt.h */,
+				B24C0285199DD3A100BCC770 /* HNCIdbt.m */,
 			);
 			path = Idbt;
 			sourceTree = "<group>";
@@ -368,6 +373,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B24C0286199DD3A100BCC770 /* HNCIdbt.m in Sources */,
 				B2CDCF841983D66A0087F0AF /* HNCAppDelegate.m in Sources */,
 				B2EC473619851F2500715B48 /* HNCMessagesTableViewConstant.m in Sources */,
 				B22009A5198C8D4000C32CBD /* HNCIdobataApp.m in Sources */,
