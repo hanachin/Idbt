@@ -109,7 +109,6 @@
     NSString *urlString = [NSString stringWithFormat: @"%@/%ld/touch", @"https://idobata.io/api/user/rooms", (long)roomId];
     NSURL *url = [NSURL URLWithString: urlString];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL: url];
-    [request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [request setHTTPMethod:@"POST"];
     [[[self defaultSession] dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         NSLog(@"%@", error);
