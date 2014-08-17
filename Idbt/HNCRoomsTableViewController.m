@@ -157,7 +157,7 @@
         NSUInteger roomId = cell.room.roomId;
         controller.roomId = roomId;
         [controller setTitle: cell.room.name];
-        [[HNCIdobataClient defaultClient] roomMessages: roomId completeHandler:^(NSArray *messages, NSURLResponse *response, NSError *error) {
+        [[HNCIdobataClient defaultClient] roomMessages: roomId completionHandler:^(NSArray *messages, NSURLResponse *response, NSError *error) {
             [controller.messages addObjectsFromArray: messages];
             [controller.tableView reloadData];
         }];

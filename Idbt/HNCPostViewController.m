@@ -57,7 +57,7 @@
 - (IBAction)done:(id)sender {
     NSLog(@"%@, %@", @"done", self.body.text);
     NSUInteger roomId = ((HNCPostNavigationController *)self.parentViewController).roomId;
-    [[HNCIdobataClient defaultClient] post:self.body.text toRoom:roomId completeHandler:^(NSDictionary *dictionary, NSURLResponse *response, NSError *error) {
+    [[HNCIdobataClient defaultClient] post:self.body.text toRoom:roomId completionHandler:^(NSDictionary *dictionary, NSURLResponse *response, NSError *error) {
         NSLog(@"%@", dictionary);
     }];
     [self dismissViewControllerAnimated:YES completion:^{

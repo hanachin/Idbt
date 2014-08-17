@@ -47,7 +47,7 @@
         }];
     }];
 }
-- (void)roomMessages:(NSInteger)roomId completeHandler:(void (^)(NSArray *messages, NSURLResponse *response, NSError *error))completionHandler
+- (void)roomMessages:(NSInteger)roomId completionHandler:(void (^)(NSArray *messages, NSURLResponse *response, NSError *error))completionHandler
 {
     NSString *urlString = [NSString stringWithFormat:@"%@?room_id=%ld", @"https://idobata.io/api/messages", (long)roomId];
     NSLog(@"%@", urlString);
@@ -82,7 +82,7 @@
 }
 
 
-- (void)post:(NSString *)body toRoom:(NSUInteger)room_id completeHandler:(void (^)(NSDictionary *dictionary, NSURLResponse *response, NSError *error))completeHandler
+- (void)post:(NSString *)body toRoom:(NSUInteger)room_id completionHandler:(void (^)(NSDictionary *dictionary, NSURLResponse *response, NSError *error))completionHandler
 {
     NSURL *url = [NSURL URLWithString:@"https://idobata.io/api/messages"];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL: url];
@@ -96,12 +96,12 @@
         NSLog(@"%@", error);
         NSDictionary *json = [NSJSONSerialization JSONObjectWithData: data options:0 error:nil];
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-            completeHandler(json, response, error);
+            completionHandler(json, response, error);
         }];
     }] resume];
 }
 
-- (void)markAsRead:(NSInteger)roomId completeHandler:(void (^)(NSString *body, NSURLResponse *response, NSError *error))completionHandler
+- (void)markAsRead:(NSInteger)roomId completionHandler:(void (^)(NSString *body, NSURLResponse *response, NSError *error))completionHandler
 {
     NSString *urlString = [NSString stringWithFormat: @"%@/%ld/touch", @"https://idobata.io/api/user/rooms", (long)roomId];
     NSURL *url = [NSURL URLWithString: urlString];
