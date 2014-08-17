@@ -18,9 +18,13 @@
 @end
 
 @implementation HNCRoomsTableViewController
+{
+    NSInteger _timeline;
+}
 
 - (void)viewDidLoad
 {
+    _timeline = 1;
     [super viewDidLoad];
     self.rooms = [[HNCIdobataRooms alloc] initWithRooms:@[]];
     // Uncomment the following line to preserve selection between presentations.
@@ -48,29 +52,42 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return self.filteredOrganizations.count;
+    return self.filteredOrganizations.count + _timeline;
 
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return [self.filteredOrganizations objectAtIndex:section][@"name"];
+    if (section < _timeline) {
+        return @"Timeline";
+    } else {
+        return [self.filteredOrganizations objectAtIndex:section - _timeline][@"name"];
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSInteger organizationId = [[self.filteredOrganizations objectAtIndex:section][@"id"] integerValue];
-    return [self.filteredRooms organizationRooms:organizationId].all.count;
+    if (section < _timeline) {
+        return _timeline;
+    } else {
+        NSInteger organizationId = [[self.filteredOrganizations objectAtIndex:section - _timeline][@"id"] integerValue];
+        return [self.filteredRooms organizationRooms:organizationId].all.count;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSInteger organizationId = [[self.filteredOrganizations objectAtIndex:indexPath.section][@"id"] integerValue];
-    NSArray *rooms = [self.filteredRooms organizationRooms:organizationId].all;
+    if (indexPath.section < _timeline) {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: @"HNCRoomsTableViewTimelineCell" forIndexPath:indexPath];
+        return cell;
+    } else {
+        NSInteger organizationId = [[self.filteredOrganizations objectAtIndex:indexPath.section - _timeline][@"id"] integerValue];
+        NSArray *rooms = [self.filteredRooms organizationRooms:organizationId].all;
 
-    HNCRoomsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:HNCRoomsTableViewCellIdentifier forIndexPath:indexPath];
-    [cell setupWithRoom: [rooms objectAtIndex:indexPath.row]];
-    return cell;
+        HNCRoomsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:HNCRoomsTableViewCellIdentifier forIndexPath:indexPath];
+        [cell setupWithRoom: [rooms objectAtIndex:indexPath.row]];
+        return cell;
+    }
 }
 
 /*
