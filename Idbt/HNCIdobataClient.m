@@ -122,7 +122,7 @@
 {
     [[[self defaultSession] dataTaskWithURL: url completionHandler: ^(NSData *data, NSURLResponse *response, NSError *error) {
         NSDictionary *headers = ((NSHTTPURLResponse *)response).allHeaderFields;
-        _cookie = headers[@"Set-Cookie"];
+        _cookie = [headers[@"Set-Cookie"] componentsSeparatedByString:@";"].firstObject;
         completionHandler(data, response, error);
     }] resume];
 }
