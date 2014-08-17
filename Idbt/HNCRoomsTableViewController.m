@@ -53,7 +53,11 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return self.filteredOrganizations.count + _timeline;
+    if (self.filteredOrganizations.count == 0) {
+        return 0;
+    } else {
+        return self.filteredOrganizations.count + _timeline;
+    }
 
 }
 
@@ -80,6 +84,12 @@
 {
     if (indexPath.section < _timeline) {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: @"HNCRoomsTableViewTimelineCell" forIndexPath:indexPath];
+        NSInteger total = self.rooms.totalUnreadCount;
+        if (total == 0) {
+            cell.detailTextLabel.text = @"";
+        } else {
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"%ld", (long)total];
+        }
         return cell;
     } else {
         NSInteger organizationId = [[self.filteredOrganizations objectAtIndex:indexPath.section - _timeline][@"id"] integerValue];
