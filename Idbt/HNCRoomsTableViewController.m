@@ -157,9 +157,16 @@
         NSUInteger roomId = cell.room.roomId;
         controller.roomId = roomId;
         [controller setTitle: cell.room.name];
-        [[HNCIdobataClient defaultClient] roomMessages: roomId completionHandler:^(NSArray *messages, NSURLResponse *response, NSError *error) {
+        HNCIdobataClient *client = [HNCIdobataClient defaultClient];
+        [client roomMessages: roomId completionHandler:^(NSArray *messages, NSURLResponse *response, NSError *error) {
             [controller.messages addObjectsFromArray: messages];
             [controller.tableView reloadData];
+            /*
+             mark room as read doesn't work
+            [client markAsRead:roomId completionHandler:^(NSString *body, NSURLResponse *response, NSError *error) {
+                NSLog(@"%@, response: %@ error:%@", @"touched", response, error);
+            }];
+             */
         }];
     }
     // Get the new view controller using [segue destinationViewController].
