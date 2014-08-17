@@ -101,6 +101,23 @@
     }] resume];
 }
 
+- (void)markAsRead:(NSInteger)roomId completeHandler:(void (^)(NSString *body, NSURLResponse *response, NSError *error))completionHandler
+{
+    NSString *urlString = [NSString stringWithFormat: @"%@/%ld/touch", @"https://idobata.io/api/user/rooms", (long)roomId];
+    NSURL *url = [NSURL URLWithString: urlString];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL: url];
+    [request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPMethod:@"POST"];
+    [[[self defaultSession] dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        NSLog(@"%@", error);
+        NSString *body = [[NSString alloc] initWithData: data encoding:NSUTF8StringEncoding];
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            completionHandler(body, response, error);
+        }];
+    }] resume];
+}
+
+
 - (void)request:(NSURL *)url completionHandler:(void (^)(NSData *data, NSURLResponse *response, NSError *error))completionHandler
 {
     [[[self defaultSession] dataTaskWithURL: url completionHandler: completionHandler] resume];

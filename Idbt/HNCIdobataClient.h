@@ -19,5 +19,6 @@
 - (void)messages:(void (^)(NSArray *messages, NSURLResponse *response, NSError *error))completionHandler;
 - (void)roomMessages:(NSInteger)roomId completeHandler:(void (^)(NSArray *messages, NSURLResponse *response, NSError *error))completionHandler;
 - (void)post:(NSString *)body toRoom:(NSUInteger)room_id completeHandler:(void (^)(NSDictionary *dictionary, NSURLResponse *response, NSError *error))completeHandler;
+- (void)markAsRead:(NSInteger)roomId completeHandler:(void (^)(NSString *body, NSURLResponse *response, NSError *error))completionHandler;
 
 @end
