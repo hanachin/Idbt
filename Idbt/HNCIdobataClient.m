@@ -39,8 +39,6 @@
 {
     NSURL *url = [NSURL URLWithString: @"https://idobata.io/api/seed"];
     [self request:url completionHandler: ^(NSData *data, NSURLResponse *response, NSError *error) {
-        NSDictionary *headers = ((NSHTTPURLResponse *)response).allHeaderFields;
-        _cookie = headers[@"Set-Cookie"];
         [[NSOperationQueue mainQueue] addOperationWithBlock:^(void) {
             if (!error) {
                 completionHandler([HNCIdobataSeed idobataSeedWithData:data], response, error);
@@ -122,7 +120,11 @@
 
 - (void)request:(NSURL *)url completionHandler:(void (^)(NSData *data, NSURLResponse *response, NSError *error))completionHandler
 {
-    [[[self defaultSession] dataTaskWithURL: url completionHandler: completionHandler] resume];
+    [[[self defaultSession] dataTaskWithURL: url completionHandler: ^(NSData *data, NSURLResponse *response, NSError *error) {
+        NSDictionary *headers = ((NSHTTPURLResponse *)response).allHeaderFields;
+        _cookie = headers[@"Set-Cookie"];
+        completionHandler(data, response, error);
+    }] resume];
 }
 
 
