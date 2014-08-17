@@ -17,5 +17,6 @@
 - (HNCIdobataRooms *)unreadRooms;
 - (HNCIdobataRooms *)organizationRooms:(NSUInteger)organizationId;
 - (NSArray *)organizationIds;
+- (NSInteger)totalUnreadCount;
 
 @end

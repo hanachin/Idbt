@@ -46,4 +46,12 @@
     }).uniq.unwrap;
 }
 
+
+- (NSInteger)totalUnreadCount
+{
+    NSNumber *total = Underscore.array(self.all).reduce(@0, ^(NSNumber *total, HNCIdobataRoom *room) {
+        return [NSNumber numberWithInteger: total.integerValue + room.unreadMessageIds.count];
+    });
+    return total.integerValue;
+}
 @end
