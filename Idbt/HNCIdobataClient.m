@@ -110,7 +110,7 @@
     NSURL *url = [NSURL URLWithString: urlString];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL: url];
     [request setHTTPMethod:@"POST"];
-    [[[self defaultSession] dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+    [[[self defaultCookieSession] dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         NSLog(@"%@", error);
         NSString *body = [[NSString alloc] initWithData: data encoding:NSUTF8StringEncoding];
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
@@ -146,9 +146,22 @@
     return defaultConfiguration;
 }
 
+- (NSURLSessionConfiguration *)defaultCookieConfiguration
+{
+    // FIXME: clone code XD
+    NSURLSessionConfiguration *defaultConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    defaultConfiguration.HTTPAdditionalHeaders = @{ @"Authorization": [self basicAuthAuthorizationHeader], @"Cookie": _cookie };
+    return defaultConfiguration;
+}
+
 - (NSURLSession *)defaultSession
 {
     return [NSURLSession sessionWithConfiguration: [self defaultConfiguration]];
+}
+
+- (NSURLSession *)defaultCookieSession
+{
+    return [NSURLSession sessionWithConfiguration: [self defaultCookieConfiguration]];
 }
 
 @end
