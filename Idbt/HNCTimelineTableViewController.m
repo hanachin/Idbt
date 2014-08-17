@@ -125,6 +125,9 @@
 */
 
 - (IBAction)markAsRead:(id)sender {
+    [[HNCIdobataClient defaultClient] markAllAsRead:^(NSString *body, NSURLResponse *response, NSError *error) {
+        NSLog(@"%@", response);
+    }];
 }
 
 // FIXME: copy from MessagesTableView XD
