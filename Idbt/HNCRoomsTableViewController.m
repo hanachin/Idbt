@@ -147,12 +147,7 @@
 
 - (IBAction)refreshRooms:(id)sender
 {
-    [[HNCIdobataClient defaultClient] seed:^(HNCIdobataSeed *seed, NSURLResponse *response, NSError *error) {
-        self.seed = seed;
-        self.rooms = seed.rooms;
-        NSLog(@"%@", seed);
-        [self.tableView reloadData];
-    }];
+    [self refresh];
 }
 
 - (IBAction)toggleFilter:(id)sender {
@@ -208,6 +203,16 @@
         return self.rooms;
     }
     return self.rooms.unreadRooms;
+}
+
+- (void)refresh
+{
+    [[HNCIdobataClient defaultClient] seed:^(HNCIdobataSeed *seed, NSURLResponse *response, NSError *error) {
+        self.seed = seed;
+        self.rooms = seed.rooms;
+        NSLog(@"%@", seed);
+        [self.tableView reloadData];
+    }];
 }
 
 @end
