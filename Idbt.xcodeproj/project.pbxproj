@@ -27,6 +27,7 @@
 		B2CDCFA31983D7B00087F0AF /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2CDCFA21983D7B00087F0AF /* Storyboard.storyboard */; };
 		B2CDCFAB1983DEBB0087F0AF /* HNCSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2CDCFAA1983DEBB0087F0AF /* HNCSettingsViewController.m */; };
 		B2CDCFAE1983E4E10087F0AF /* HNCIdobataClient.m in Sources */ = {isa = PBXBuildFile; fileRef = B2CDCFAD1983E4E10087F0AF /* HNCIdobataClient.m */; };
+		B2D4569C19A084280095F5A4 /* HNCTimelineTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D4569B19A084280095F5A4 /* HNCTimelineTableViewController.m */; };
 		B2E8EACF198BEB1500B1B415 /* HNCRoomsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E8EACD198BEB1500B1B415 /* HNCRoomsTableViewCell.m */; };
 		B2EC47271984EF6000715B48 /* HNCIdobataSeed.m in Sources */ = {isa = PBXBuildFile; fileRef = B2EC47261984EF6000715B48 /* HNCIdobataSeed.m */; };
 		B2EC472A1984FBD600715B48 /* HNCIdobataMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = B2EC47291984FBD600715B48 /* HNCIdobataMessage.m */; };
@@ -82,6 +83,8 @@
 		B2CDCFAA1983DEBB0087F0AF /* HNCSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNCSettingsViewController.m; sourceTree = "<group>"; };
 		B2CDCFAC1983E4E10087F0AF /* HNCIdobataClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNCIdobataClient.h; sourceTree = "<group>"; };
 		B2CDCFAD1983E4E10087F0AF /* HNCIdobataClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNCIdobataClient.m; sourceTree = "<group>"; };
+		B2D4569A19A084280095F5A4 /* HNCTimelineTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNCTimelineTableViewController.h; sourceTree = "<group>"; };
+		B2D4569B19A084280095F5A4 /* HNCTimelineTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNCTimelineTableViewController.m; sourceTree = "<group>"; };
 		B2E8EACC198BEB1500B1B415 /* HNCRoomsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNCRoomsTableViewCell.h; sourceTree = "<group>"; };
 		B2E8EACD198BEB1500B1B415 /* HNCRoomsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNCRoomsTableViewCell.m; sourceTree = "<group>"; };
 		B2E8EAD1198BEC3700B1B415 /* HNCRoomsTableViewConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNCRoomsTableViewConstant.h; sourceTree = "<group>"; };
@@ -187,6 +190,8 @@
 				B2CDCF821983D66A0087F0AF /* HNCAppDelegate.h */,
 				B2CDCF831983D66A0087F0AF /* HNCAppDelegate.m */,
 				B2CDCFA21983D7B00087F0AF /* Storyboard.storyboard */,
+				B2D4569A19A084280095F5A4 /* HNCTimelineTableViewController.h */,
+				B2D4569B19A084280095F5A4 /* HNCTimelineTableViewController.m */,
 				B2F05315198A6EF80026CC72 /* HNCRoomsTableViewController.h */,
 				B2F05316198A6EF80026CC72 /* HNCRoomsTableViewController.m */,
 				B2E8EACC198BEB1500B1B415 /* HNCRoomsTableViewCell.h */,
@@ -378,6 +383,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2D4569C19A084280095F5A4 /* HNCTimelineTableViewController.m in Sources */,
 				B24C0286199DD3A100BCC770 /* HNCIdbt.m in Sources */,
 				B2CDCF841983D66A0087F0AF /* HNCAppDelegate.m in Sources */,
 				B2EC473619851F2500715B48 /* HNCMessagesTableViewConstant.m in Sources */,
