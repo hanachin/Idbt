@@ -102,6 +102,19 @@
     }] resume];
 }
 
+- (void)markAllAsRead:(void (^)(NSString *body, NSURLResponse *response, NSError *error))completionHandler
+{
+    NSURL *url = [NSURL URLWithString: @"https://idobata.io/api/user/rooms/touch"];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL: url];
+    [request setHTTPMethod:@"POST"];
+    [[[self defaultSession] dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        NSString *body = [[NSString alloc] initWithData: data encoding:NSUTF8StringEncoding];
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            completionHandler(body, response, error);
+        }];
+    }] resume];
+}
+
 - (void)markAsRead:(NSInteger)roomId completionHandler:(void (^)(NSString *body, NSURLResponse *response, NSError *error))completionHandler
 {
     NSString *urlString = [NSString stringWithFormat: @"%@/%ld/touch", @"https://idobata.io/api/user/rooms", (long)roomId];
