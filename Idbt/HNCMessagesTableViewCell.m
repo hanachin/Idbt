@@ -33,6 +33,8 @@
     self.username.text = message.senderName;
     self.message.attributedText = message.attributedString;
     [self.icon sd_setImageWithURL: message.senderIconUrl];
+    [self.icon.layer setCornerRadius:22.0];
+    [self.icon.layer setMasksToBounds:YES];
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyy-MM-dd / HH:mm:ss"];
     self.datetime.text = [formatter stringFromDate: message.createdAt];
