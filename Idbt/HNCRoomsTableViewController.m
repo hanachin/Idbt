@@ -158,10 +158,6 @@
 }
  */
 
-- (IBAction)refreshRooms:(id)sender
-{
-    [self refresh];
-}
 
 - (IBAction)toggleFilter:(id)sender {
     if ([self.filterSegment selectedSegmentIndex] == 0) {

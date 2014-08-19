@@ -18,7 +18,6 @@
 @property BOOL filterUnread;
 
 
-- (IBAction)refreshRooms:(id)sender;
 - (IBAction)toggleFilter:(id)sender;
 
 @end
