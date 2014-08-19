@@ -9,6 +9,7 @@
 #import "HNCMessagesTableViewController.h"
 #import "HNCMessagesTableViewConstant.h"
 #import "HNCMessagesTableViewCell.h"
+#import "HNCIdobataClient.h"
 #import "HNCIdobataMessage.h"
 #import "HNCPostNavigationController.h"
 
@@ -31,7 +32,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    [self.refreshControl addTarget:self action:@selector(updateMessages) forControlEvents:UIControlEventValueChanged];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -132,6 +133,27 @@
     int padding = 10;
     int rowHeight = 44 + 10; // 5px around icon
     return MAX(bodySize.height + topSpace + padding, rowHeight);
+}
+
+- (HNCIdobataMessage *)latestMessage
+{
+    return self.messages.firstObject;
+}
+
+- (void)updateMessages
+{
+    NSLog(@"latest: %@", [self latestMessage].body);
+    [[HNCIdobataClient defaultClient] roomMessages:self.roomId completionHandler:^(NSArray *messages, NSURLResponse *response, NSError *error) {
+        NSArray *newerMessages = Underscore.array(messages)
+        .reject(^BOOL (HNCIdobataMessage *message) {
+            return message.messageId <= [self latestMessage].messageId;
+        }).unwrap;
+        NSMutableArray *newMessages = [[NSMutableArray alloc] initWithArray:newerMessages];
+        [newMessages addObjectsFromArray: self.messages];
+        self.messages = newMessages;
+        [self.tableView reloadData];
+        [self.refreshControl endRefreshing];
+    }];
 }
 
 @end
