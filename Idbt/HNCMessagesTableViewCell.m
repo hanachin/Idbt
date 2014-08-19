@@ -25,7 +25,7 @@
 
 + (CGFloat)rowHeight
 {
-    return 44.0f;
+    return 44.0f + 5.0 * 2;
 }
 
 - (void)setupWithMessage:(HNCIdobataMessage *)message
