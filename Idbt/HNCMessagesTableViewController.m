@@ -143,12 +143,8 @@
 - (void)updateMessages
 {
     NSLog(@"latest: %@", [self latestMessage].body);
-    [[HNCIdobataClient defaultClient] roomMessages:self.roomId completionHandler:^(NSArray *messages, NSURLResponse *response, NSError *error) {
-        NSArray *newerMessages = Underscore.array(messages)
-        .reject(^BOOL (HNCIdobataMessage *message) {
-            return message.messageId <= [self latestMessage].messageId;
-        }).unwrap;
-        NSMutableArray *newMessages = [[NSMutableArray alloc] initWithArray:newerMessages];
+    [[HNCIdobataClient defaultClient] roomMessages:self.roomId after:[self latestMessage].messageId completionHandler:^(NSArray *messages, NSURLResponse *response, NSError *error) {
+        NSMutableArray *newMessages = [[NSMutableArray alloc] initWithArray:messages];
         [newMessages addObjectsFromArray: self.messages];
         self.messages = newMessages;
         [self.tableView reloadData];

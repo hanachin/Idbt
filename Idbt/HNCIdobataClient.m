@@ -68,6 +68,17 @@
     [self messages:url completeHandler:completionHandler];
 }
 
+- (void)roomMessages:(NSInteger)roomId after:(NSInteger)messageId completionHandler:(void (^)(NSArray *messages, NSURLResponse *response, NSError *error))completionHandler
+{
+    [self roomMessages:roomId completionHandler:^(NSArray *messages, NSURLResponse *response, NSError *error) {
+        NSArray *newerMessages = Underscore.array(messages)
+            .reject(^BOOL (HNCIdobataMessage *message) {
+                return message.messageId <= messageId;
+            }).unwrap;
+        completionHandler(newerMessages, response, error);
+    }];
+}
+
 - (void)messages:(NSURL *)url completeHandler:(void (^)(NSArray *messages, NSURLResponse *response, NSError *error))completionHandler
 {
     [self request:url completionHandler: ^(NSData *data, NSURLResponse *response, NSError *error) {
