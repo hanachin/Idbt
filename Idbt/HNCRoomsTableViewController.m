@@ -26,6 +26,8 @@
 {
     _timeline = 1;
     [super viewDidLoad];
+    [self.refreshControl addTarget:self action:@selector(refresh) forControlEvents:UIControlEventValueChanged];
+
     self.rooms = [[HNCIdobataRooms alloc] initWithRooms:@[]];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -223,6 +225,7 @@
         self.rooms = seed.rooms;
         NSLog(@"%@", seed);
         [self.tableView reloadData];
+        [self.refreshControl endRefreshing];
     }];
 }
 
