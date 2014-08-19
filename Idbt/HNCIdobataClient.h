@@ -17,6 +17,7 @@
 - (HNCIdobataClient *)initWithEmail:(NSString *)email password:(NSString *)password;
 - (void)seed:(void (^)(HNCIdobataSeed *seed, NSURLResponse *response, NSError *error))completionHandler;
 - (void)messages:(void (^)(NSArray *messages, NSURLResponse *response, NSError *error))completionHandler;
+- (void)messagesAfter:(NSInteger)roomId completionHandler:(void (^)(NSArray *messages, NSURLResponse *response, NSError *error))completionHandler;
 - (void)roomMessages:(NSInteger)roomId completionHandler:(void (^)(NSArray *messages, NSURLResponse *response, NSError *error))completionHandler;
 - (void)roomMessages:(NSInteger)roomId before:(NSInteger)messageId completionHandler:(void (^)(NSArray *messages, NSURLResponse *response, NSError *error))completionHandler;
 - (void)roomMessages:(NSInteger)roomId after:(NSInteger)messageId completionHandler:(void (^)(NSArray *messages, NSURLResponse *response, NSError *error))completionHandler;
