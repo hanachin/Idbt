@@ -30,6 +30,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.refreshControl addTarget:self action:@selector(refresh) forControlEvents:UIControlEventValueChanged];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -149,4 +150,21 @@
     int rowHeight = 44 + 10.0;
     return MAX(bodySize.height + topSpace + padding, rowHeight);
 }
+
+- (HNCIdobataMessage *)latestMessage
+{
+    return self.messages.firstObject;
+}
+
+- (void)refresh
+{
+    [[HNCIdobataClient defaultClient] messagesAfter: [self latestMessage].messageId completionHandler: ^(NSArray *messages, NSURLResponse *response, NSError *error) {
+        NSMutableArray *newMessages = [[NSMutableArray alloc] initWithArray:messages];
+        [newMessages addObjectsFromArray: self.messages];
+        self.messages = newMessages;
+        [self.tableView reloadData];
+        [self.refreshControl endRefreshing];
+    }];
+}
+
 @end
