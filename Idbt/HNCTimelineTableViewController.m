@@ -133,7 +133,7 @@
 // FIXME: copy from MessagesTableView XD
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    int headingSpace = 52;
+    int headingSpace = 57;
     int trailingSpace = 10;
     int textWidth = self.tableView.frame.size.width - headingSpace - trailingSpace;
     
@@ -146,7 +146,7 @@
                        ].size;
     int topSpace = 20;
     int padding = 10;
-    int rowHeight = 44;
+    int rowHeight = 44 + 10.0;
     return MAX(bodySize.height + topSpace + padding, rowHeight);
 }
 @end
