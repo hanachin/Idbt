@@ -12,5 +12,6 @@
 
 @property (nonatomic, strong) NSMutableArray *messages;
 @property (nonatomic) NSUInteger roomId;
+@property (nonatomic) BOOL loadingOldMessages;
 
 @end

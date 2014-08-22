@@ -39,6 +39,7 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     self.messages =[NSMutableArray array];
+    self.loadingOldMessages = NO;
 }
 
 - (void)didReceiveMemoryWarning
@@ -135,6 +136,12 @@
     return MAX(bodySize.height + topSpace + padding, rowHeight);
 }
 
+
+- (HNCIdobataMessage *)oldestMessage
+{
+    return self.messages.lastObject;
+}
+
 - (HNCIdobataMessage *)latestMessage
 {
     return self.messages.firstObject;
@@ -151,5 +158,26 @@
         [self.refreshControl endRefreshing];
     }];
 }
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    //[super tableView: tableView willDisplayCell: cell forRowAtIndexPath: indexPath];
+    if (indexPath.row == (self.messages.count - 1) && !self.loadingOldMessages) {
+        [self loadOldMessages];
+    }
+}
+
+- (void)loadOldMessages
+{
+    self.loadingOldMessages = YES;
+    [[HNCIdobataClient defaultClient] roomMessages:self.roomId before:[self oldestMessage].messageId completionHandler:^(NSArray *messages, NSURLResponse *response, NSError *error) {
+        NSMutableArray *newMessages = [[NSMutableArray alloc] initWithArray: self.messages];
+        [newMessages addObjectsFromArray: messages];
+        self.messages = newMessages;
+        [self.tableView reloadData];
+        self.loadingOldMessages = NO;
+    }];
+}
+
 
 @end
