@@ -62,6 +62,13 @@
     [self messages:url completeHandler:completionHandler];
 }
 
+- (void)messagesBefore:(NSInteger)messageId completionHandler:(void (^)(NSArray *messages, NSURLResponse *response, NSError *error))completionHandler
+{
+    NSURL *url = [NSURL URLWithString: [NSString stringWithFormat: @"https://idobata.io/api/messages?older_than=%ld", (long)messageId]];
+    [self messages:url completeHandler:completionHandler];
+}
+
+
 - (void)roomMessages:(NSInteger)roomId before:(NSInteger)messageId completionHandler:(void (^)(NSArray *messages, NSURLResponse *response, NSError *error))completionHandler
 {
     NSURL *url = [NSURL URLWithString: [NSString stringWithFormat: @"https://idobata.io/api/messages?room_id=%ld&older_than=%ld", (long)roomId, (long)messageId]];
