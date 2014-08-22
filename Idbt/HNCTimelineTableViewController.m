@@ -40,6 +40,7 @@
     FAKFontAwesome *checkIcon = [FAKFontAwesome checkIconWithSize:28.0];
     [self.markAsReadButton setImage:[checkIcon imageWithSize: CGSizeMake(28.0, 28.0)]];
     self.messages = @[];
+    self.loadingOldMessages = NO;
     [[HNCIdobataClient defaultClient] messages:^(NSArray *messages, NSURLResponse *response, NSError *error) {
         self.messages = messages;
         [self.tableView reloadData];
@@ -156,6 +157,12 @@
     return self.messages.firstObject;
 }
 
+- (HNCIdobataMessage *)oldestMessage
+{
+    return self.messages.lastObject;
+}
+
+
 - (void)refresh
 {
     [[HNCIdobataClient defaultClient] messagesAfter: [self latestMessage].messageId completionHandler: ^(NSArray *messages, NSURLResponse *response, NSError *error) {
@@ -164,6 +171,24 @@
         self.messages = newMessages;
         [self.tableView reloadData];
         [self.refreshControl endRefreshing];
+    }];
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row == (self.messages.count - 1) && !self.loadingOldMessages) {
+        [self loadOldMessages];
+    }
+}
+
+- (void)loadOldMessages
+{
+    [[HNCIdobataClient defaultClient] messagesBefore:[self oldestMessage].messageId completionHandler:^(NSArray *messages, NSURLResponse *response, NSError *error) {
+        NSMutableArray *newMessages = [[NSMutableArray alloc] initWithArray:self.messages];
+        [newMessages addObjectsFromArray:messages];
+        self.messages = newMessages;
+        [self.tableView reloadData];
+        self.loadingOldMessages = NO;
     }];
 }
 

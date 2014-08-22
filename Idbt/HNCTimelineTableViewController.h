@@ -14,5 +14,6 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *markAsReadButton;
 @property (strong, nonatomic) NSArray *messages;
 - (IBAction)markAsRead:(id)sender;
+@property (nonatomic) BOOL loadingOldMessages;
 
 @end
