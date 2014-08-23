@@ -232,7 +232,9 @@
 
 - (IBAction)unwindToRoomsView:(UIStoryboardSegue *)segue
 {
-    NSLog(@"%@", @"done");
+    if ([[HNCIdobataClient defaultClient] isConfigured]) {
+        [self refresh];
+    }
 }
 
 @end
