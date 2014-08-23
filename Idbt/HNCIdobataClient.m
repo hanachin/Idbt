@@ -35,6 +35,10 @@
     return self;
 }
 
+- (BOOL)isConfigured
+{
+    return _email && _password && _email.length >= 1 && _password.length >= 1;
+}
 - (void)seed:(void (^)(HNCIdobataSeed *seed, NSURLResponse *response, NSError *error))completionHandler;
 {
     NSURL *url = [NSURL URLWithString: @"https://idobata.io/api/seed"];

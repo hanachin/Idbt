@@ -42,7 +42,12 @@
     [self.filterSegment setImage:[chatbubbleIcon imageWithSize:CGSizeMake(24.0, 24.0)] forSegmentAtIndex:0];
     FAKIonIcons *chatbubbleWorkingIcon = [FAKIonIcons chatbubbleWorkingIconWithSize:24.0];
     [self.filterSegment setImage:[chatbubbleWorkingIcon imageWithSize:CGSizeMake(24.0, 24.0)] forSegmentAtIndex:1];
-    [self refresh];
+
+    if ([[HNCIdobataClient defaultClient] isConfigured]) {
+        [self refresh];
+    } else {
+        [self performSegueWithIdentifier:@"openConfig" sender:self];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -223,6 +228,11 @@
         [self.tableView reloadData];
         [self.refreshControl endRefreshing];
     }];
+}
+
+- (IBAction)unwindToRoomsView:(UIStoryboardSegue *)segue
+{
+    NSLog(@"%@", @"done");
 }
 
 @end
