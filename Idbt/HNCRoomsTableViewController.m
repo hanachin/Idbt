@@ -42,7 +42,10 @@
     [self.filterSegment setImage:[chatbubbleIcon imageWithSize:CGSizeMake(24.0, 24.0)] forSegmentAtIndex:0];
     FAKIonIcons *chatbubbleWorkingIcon = [FAKIonIcons chatbubbleWorkingIconWithSize:24.0];
     [self.filterSegment setImage:[chatbubbleWorkingIcon imageWithSize:CGSizeMake(24.0, 24.0)] forSegmentAtIndex:1];
+}
 
+- (void)viewDidAppear:(BOOL)animated
+{
     if ([[HNCIdobataClient defaultClient] isConfigured]) {
         [self refresh];
     } else {
