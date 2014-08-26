@@ -33,6 +33,8 @@
         self.detailTextLabel.text = [NSString stringWithFormat:@"%ld", (long)room.unreadMessageIds.count];
         if (room.unreadMentionIds.count > 0) {
             self.detailTextLabel.textColor = [UIColor blueColor];
+        } else {
+            self.detailTextLabel.textColor = [UIColor blackColor];
         }
     }
 }
